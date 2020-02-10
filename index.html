@@ -1,0 +1,3483 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>PhD Defense</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- REVEAL CSS-->
+  <link rel="stylesheet" href="libs/reveal.js/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="libs/reveal.js/3.8.0/css/reveal.css">
+  
+  <link rel="stylesheet" href="libs/reveal.js/3.8.0/css/theme/night.css" id="theme">
+  
+  
+  <link rel="stylesheet" href="libs/reveal.js/3.8.0/plugin/title-footer/title-footer-mod.css" />
+
+  <!-- MERMAID-->
+  <script src="libs/reveal.js/3.8.0/plugin/mermaid/mermaid.min.js"></script>
+  <style>
+  .mermaid {
+    font-size: 0.5em;
+  }
+  </style>
+
+  <style>
+    [class*=task-list-item] {
+    min-height: 22px;
+    margin-top: 6px!important;
+    margin-bottom: 6px!important;
+    padding-left: 0;
+    list-style: none;
+}
+
+[class*=task-list-item]>input:first-child {
+    position: absolute!important;
+    opacity: 0;
+    margin: 0;
+}
+[class*=task-list-item]>label {
+    padding-left: 29px!important;
+    min-height: 22px;
+    line-height: 22px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.task-list-item>input:first-child:checked+input[type=hidden]+label::before, .task-list-item>input:first-child:checked+label::before {
+    background-color: #ecf0f1;
+    border-color: #ecf0f1;
+}
+
+[class*=task-list-item]>input:first-child+input[type=hidden]+label::before, [class*=task-list-item]>input:first-child+label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #D3CFC8;
+    border-radius: 0;
+    margin-left: -29px;
+}
+
+
+[class*=task-list-item]>input:first-child:checked+input[type=hidden]+label::after, [class*=task-list-item]>input:first-child:checked+label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-left: none;
+    border-top: none;
+    transform: translate(7.75px,4.5px) rotate(45deg);
+    -ms-transform: translate(7.75px,4.5px) rotate(45deg);
+}
+
+
+.task-list-item>input:first-child:checked+input[type=hidden]+label::after, .task-list-item>input:first-child:checked+label::after {
+    border-bottom-color: #95a5a6;
+    border-right-color: #95a5a6;
+}
+  </style>
+
+  <!-- Theme used for syntax highlighting of code -->
+  
+  <link rel="stylesheet" href="libs/highlight.js/9.12.0/hybrid.css">
+  
+
+  
+  
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'libs/reveal.js/3.8.0/css/print/pdf.css' : 'libs/reveal.js/3.8.0/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <style>
+    /* Solarized Light theme */
+     .line {
+      display: block;
+    }
+    
+
+    .line.focus {
+      background: #fdf6e3;
+      color: #657b83;
+    }
+
+/*
+    .line.focus .hljs-comment,
+    .line.focus .hljs-quote {
+      color: #93a1a1;
+    }
+
+    .line.focus .hljs-keyword,
+    .line.focus .hljs-selector-tag,
+    .line.focus .hljs-addition {
+      color: #859900;
+    }
+
+    .line.focus .hljs-number,
+    .line.focus .hljs-string,
+    .line.focus .hljs-meta .hljs-meta-string,
+    .line.focus .hljs-literal,
+    .line.focus .hljs-doctag,
+    .line.focus .hljs-regexp {
+      color: #2aa198;
+    }
+
+    .line.focus .hljs-title,
+    .line.focus .hljs-section,
+    .line.focus .hljs-name,
+    .line.focus .hljs-selector-id,
+    .line.focus .hljs-selector-class {
+      color: #268bd2;
+    }
+
+    .line.focus .hljs-attribute,
+    .line.focus .hljs-attr,
+    .line.focus .hljs-variable,
+    .line.focus .hljs-template-variable,
+    .line.focus .hljs-class .hljs-title,
+    .line.focus .hljs-type {
+      color: #b58900;
+    }
+
+    .line.focus .hljs-symbol,
+    .line.focus .hljs-bullet,
+    .line.focus .hljs-subst,
+    .line.focus .hljs-meta,
+    .line.focus .hljs-meta .hljs-keyword,
+    .line.focus .hljs-selector-attr,
+    .line.focus .hljs-selector-pseudo,
+    .line.focus .hljs-link {
+      color: #cb4b16;
+    }
+
+    .line.focus .hljs-built_in,
+    .line.focus .hljs-deletion {
+      color: #dc322f;
+    }
+
+    .line.focus .hljs-formula {
+      background: #eee8d5;
+    }
+
+    .line.focus .hljs-emphasis {
+      font-style: italic;
+    }
+
+    .line.focus .hljs-strong {
+      font-weight: bold;
+    }
+
+    .yellow-slide .line.focus:nth-child(2) {
+      background: yellow;
+    }
+
+    .reveal .slides section .code-presenting-annotation {
+      font-size: 70%;
+    }
+    */
+
+    .reveal .slides section .fragment.current-only {
+      visibility: visible;
+      display: none;
+    }
+
+    .reveal .slides section .fragment.current-only.current-fragment {
+      display: block;
+    }
+
+/*
+    .line {
+      display: block;
+    }
+*/
+    .line.focus {
+       opacity: 1.0;
+    } 
+
+    /* .hljs {
+      background: none;
+    } */
+
+    /* .reveal pre {
+      width: 98%;
+      margin: 0px;
+      box-shadow: none;
+    }
+
+    .reveal pre code {
+      font-size: 1.2em;
+      line-height: 1.2;
+      border-radius: 10px;
+      max-height: 60vh !important;
+      overflow: hidden !important;
+    } */
+
+    @media (device-width: 100vw) and (device-height: 100vh) {
+      .reveal pre code {
+        max-height: 50vh !important;
+      }
+    }
+
+    #logo img {
+      max-height: 3.5em;
+      max-width: none;
+      min-width: 50px;
+    }
+
+    .reveal .slides section .code-presenting-annotation {
+      color: white;
+      background: black;
+      padding: 0px 15px;
+      border-radius: 15px;
+      opacity: 0.75 !important;
+      font-size: 50% !important;
+    }
+  </style>
+  <script>
+    if (window.location.search.match(/print-pdf-now/gi)) {
+      window.print();
+    }
+  </script>
+</head>
+
+<body>
+  
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+        <section data-background="orange">
+            
+            <!-- .slide: data-background="orange" -->
+<h3 style="text-align:right;color:black"><a id="user-content-statistical-and-gis-approaches-to-landslide-susceptibility-assessment-and-mapping-in-mila-basin-ne-algeria" class="anchor" href="#statistical-and-gis-approaches-to-landslide-susceptibility-assessment-and-mapping-in-mila-basin-ne-algeria" aria-hidden="true"></a>Statistical and GIS Approaches to Landslide Susceptibility Assessment and Mapping In Mila Basin (NE Algeria)</h3>
+<p>By:</p>
+<h4 style="color:white"><a id="user-content-merghadi-abdelaziz" class="anchor" href="#merghadi-abdelaziz" aria-hidden="true"></a>Merghadi Abdelaziz</h4>
+
+            </section>
+    
+
+
+
+    
+    <section>
+        <section data-background="orange">
+            <!-- .slide: data-background="orange" -->
+<h1 style="text-align:right;color:black;"><a id="user-content-problem-statement" class="anchor" href="#problem-statement" aria-hidden="true"></a>Problem</br>Statement</h1>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-problem-statement-1" class="anchor" href="#problem-statement-1" aria-hidden="true"></a>Problem Statement</h2>
+<span style="display: block; font-size: smaller;">
+<ul>
+<li>
+<p>This research is picking interest in landslide susceptibility assessment and mapping at a study area located North East of Algeria, called Mila basin.</p>
+</li>
+<li>
+<p>This basin is well known for the variety of landslides that are (to a certain degree) non-mapped due to the unique heterogeneous properties (i.e. geology, geomorphology and so forth, that vary dramatically).</p>
+</li>
+<li>
+<p>This dramatic variance of landslides in the basin, in term of the spatial repartition and intensity, became a very serious handicap to the urban, local, social and economic development of the basin since 1985.</p>
+</li>
+<li>
+<p>Over the years, the ever-increasing rate of this hazard is, in particular, increasing the number of the element at risk exposed to landslides, especially at urban zones. As consequence, an increase in the economic burden associated with landslides damages it became a major issue for the local development.</p>
+</li>
+<li>
+<p>Over the year, these burdens trigger a reaction-chain of two separate issues:</p>
+<ul>
+<li>
+<p>Stable areas are becoming more expensive for landlord and projects development.</p>
+</li>
+<li>
+<p>Constructions in inadequate terrains and/or soils increase the overall expenses and the project budget by the exposure of such constructions to landslide and land instabilities.</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-problem-statement-2" class="anchor" href="#problem-statement-2" aria-hidden="true"></a>Problem Statement</h2>
+<span style="display: block; font-size: smaller;">
+<ul>
+<li>
+<p>For these reasons, landslide mitigation processes became an absolute necessity that mandate assessing landslides susceptibility in a systematic, fast and evolving ways using models that are capable of anticipating the overall patterns of this phenomena and thus better understanding and evaluating the overall damages and maybe future development projects.</p>
+</li>
+<li>
+<p>Despite the several remedial projects that have been carried out over the years, the effect of landslides in term of damages is still persisting and sometimes even worse due to the fact these remedies actually focus on:</p>
+<ul>
+<li>
+<p>Treating the symptoms of the landslides instead of the issue itself without considering soils intrinsic properties.</p>
+</li>
+<li>
+<p>Randomly patching site-specific and in-situ related issues.</p>
+</li>
+<li>
+<p>Relying on subjective expert-opinion which objectively incomprehensible.</p>
+</li>
+<li>
+<p>Focusing on expensive and classic methods that are limited either in scope or spatial and temporal extent.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Yet, these remedies tend to ignore:</p>
+<ul>
+<li>
+<p>The overall landslide patterns behaviors.</p>
+</li>
+<li>
+<p>Recent advancement in computer science and the new innovative state-of-the-art landslide models.</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-problem-statement-3" class="anchor" href="#problem-statement-3" aria-hidden="true"></a>Problem Statement</h2>
+<span style="display: block; font-size: smaller;">
+<ul>
+<li>
+<p>Overall, this research will try to implement statistical-based modeling for landslide susceptibility assessment and mapping in GIS compatible environment at Mila basin as a case study by relying on Machine learning  using state-of-the-art Computer Science models and algorithms instead of well documented and elaborated conventional and traditional approaches for landslide susceptibility.</p>
+</li>
+<li>
+<p>Moreover, it is important to note that this research will focus on the process of modeling and assessing the landslides in the study area, whereas landslide phenomenology, evolution process, triggering mechanism, landslides conditioning and triggering factors  are out of the scope of this analysis because of being well presented and discussed in number of research literatures and investigation campaigns.</p>
+</li>
+<li>
+<p>One important research hint is that landslide typologies observed in the study were diverse and entirely different, despite landslide occurrences are mostly linked to Tertiary formations. For this reason alone, it was advised to assess only one landslide type at a time, and eventually combine these separate assessments later on as suggested by Van Westen et al. (2006). Therefore, the focus was substantially giving to “slides” landslides.</p>
+</li>
+</ul>
+</span>
+<aside class="notes">
+</aside>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section data-background="orange">
+            <!-- .slide: data-background="orange" -->
+<h1 style="text-align:right;color:black;"><a id="user-content-theoretical-background" class="anchor" href="#theoretical-background" aria-hidden="true"></a>Theoretical</br>Background</h1>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:left;"><a id="user-content-landslide-phenomenology" class="anchor" href="#landslide-phenomenology" aria-hidden="true"></a>Landslide Phenomenology</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-59969"><label class="task-list-item-label" for="task-item-59969"> Definitions and Scope</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5344834"><label class="task-list-item-label" for="task-item-5344834"> Susceptibility, Hazard, Vulnerability, And Risk</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5266597"><label class="task-list-item-label" for="task-item-5266597"> Landslide Assessment</label></li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:left;"><a id="user-content-definitions-and-scope" class="anchor" href="#definitions-and-scope" aria-hidden="true"></a>Definitions and Scope</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4650742"><label class="task-list-item-label" for="task-item-4650742"> Landslides</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7047552"><label class="task-list-item-label" for="task-item-7047552"> Slopes stability</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3153122"><label class="task-list-item-label" for="task-item-3153122"> Conditioning factors</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3418398"><label class="task-list-item-label" for="task-item-3418398"> Landslide classification</label></li>
+</ul>
+<span style="display: block; font-size: smaller;">
+<aside class="notes">
+The term landslide had evolved over the years gaining various interpretations and conceptions depending on the scientific discipline or the research-schools. As result, “landslide” as term expresses more or less either specific or general phenomena. From the first-person perspective, a general definition (term, conception or description) that encompass the phenomena, would be highly feasible and recommended as it offers a simple solution, but overall lacking details. Thus, make it even more difficult to really understand the landslide phenomena. However, the abundant information’s on the aforementioned issue is widely available on literature reviews and will not serve any particular interest in this research. The following paragraphs provides a brief summary explaining, discussing and illustrating the essential landslide terminologies used in the multilingual landslide glossary, which should (for uniformity of practice) be adopted when classifying and describing a landslide to fully comprehend and understand landslide phenomena based on Varnes (1984), Cruden and Varnes (1996), and Cruden and Couture (2010) definitions and interpretations, which are one of the most broaden and highly endorsed landslide interpretations and definitions worldwide by lead scientific communities and consortium such as WP/WLI .
+</aside>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslides" class="anchor" href="#landslides" aria-hidden="true"></a>Landslides</h2>
+<span style="display: block; float: right; width: 35%;">
+<img src="./img/ls_demo1.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 60%;">
+Landslides are denoted as a gravitational downward and outward mass-movements of different slope-forming materials, developed along predefined surfaces that are widely known as slip-surfaces, on which propagate throughout the mass and clearly separate intact bedrock material from the moved material above.
+</span>
+<span style="display: block; float: left; width: 35%;">
+<img src="./img/ls_example1.jpg">
+</span>
+<span style="display: block; float: right; text-align: justify; font-size: smaller; width: 65%;">
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9131915"><label class="task-list-item-label" for="task-item-9131915"> Predefined surfaces (i.e. stratification joints, schistosity plan, discontinuities…etc.).</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1311499"><label class="task-list-item-label" for="task-item-1311499"> Slope-forming materials (i.e. rocks, debris, earth masses (soils), artificial fills or mix of everything).</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5699315"><label class="task-list-item-label" for="task-item-5699315"> Slip-surfaces (can vary from simple geometry such as planar slip-surface to a higher order geometry resulting in very complex slip-surfaces).</label></p>
+</li>
+</ul>
+</span>
+<aside class="notes">
+<!-- .element: style="width: 40%" -->
+<!-- .element: style="float: right; width: 40%" -->
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslides-1" class="anchor" href="#landslides-1" aria-hidden="true"></a>Landslides</h2>
+<span style="display: block; text-align: left; font-size: smaller; float: left; width: 50%;">
+<img width=100% src="./img/ls_demo1.jpg">
+</span>
+<span style="display: block; text-align: justify; float: right;  font-size: smaller; width: 50%;">
+<ul>
+<li>
+<p>Morphologically an ideal landslide consists of (from top to bottom) crown and head separated by scrap; the main body, channeled by flanks; foot terminated by a toe; depletion zone and accumulation zone capturing upper lower portions of the landslide.</p>
+</li>
+<li>
+<p>Landslides develop mostly in slopes either natural or engineered and can vary in terms of size and the affected area.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align: right;"><a id="user-content-slopes-stability" class="anchor" href="#slopes-stability" aria-hidden="true"></a>Slopes stability</h2>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>Slopes stability is maintained and determined by the equilibrium of two driving forces that act upon the slope.</p>
+</li>
+<li>
+<p>Displacement is irreversible deformation that will take place if resisting forces are succumbed by driving forces.</p>
+</li>
+<li>
+<p>The driving forces involve:</p>
+<ul>
+<li>
+<p>increasing of slope weight or shear stress (i.e. via water saturation, adding load or rearranging of the slope geometry).</p>
+</li>
+<li>
+<p>loss of support (i.e. via erosion and rearranging of the slope geometry).</p>
+</li>
+<li>
+<p>dynamic influences.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>On the opposite, resisting forces are represented by:</p>
+<ul>
+<li>
+<p>shear strength and cohesion of slope materials.</p>
+</li>
+<li>
+<p>as well as friction along a slip-surfaces.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>which all further depend on the nature and condition of the slope materials, but as well on the slope morphology and geometry (i.e. steepness, elevation, curvature etc.).</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-conditioning-factors" class="anchor" href="#conditioning-factors" aria-hidden="true"></a>Conditioning factors</h2>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<blockquote>
+<p><strong>Conditioning factors</strong> are the feature sets, variables or parameters that may influence slopes stability by influencing either directly or indirectly the driving and/or resisting forces. These factors are able to provide technical background on the landslides occurrences.</p>
+</blockquote>
+<blockquote>
+<p><strong>Triggering factors</strong> are the feature sets (variables or parameters) that once the terms of slopes failure are reached and satisfied, the landslide process unfolds under the influence of one of these different factors or by their combination.</p>
+</blockquote>
+<ul>
+<li>
+<p>It’s important to note that according to Cruden and Couture (2010), conditioning and triggering factors are regrouped into four categories , i.e. geological, morphological, physical and human-induced factors, as given in Table below.</p>
+</li>
+<li>
+<p>However, it may not be mandatory to include all factors in each landslide assessment it solely depends on a variety of parameters (e.g. the case study where few or more factors can be used), as explained by Soeters and van Westen (1996).</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h3 style="text-align:right;"><a id="user-content-a-brief-list-of-landslide-conditioning-and-triggering-factors" class="anchor" href="#a-brief-list-of-landslide-conditioning-and-triggering-factors" aria-hidden="true"></a>A brief list of landslide conditioning and triggering factors</h3>
+<span style="display: block; text-align: left; font-size: smaller;">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Geological Factors</th>
+<th style="text-align:left">Morphological factors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Plastic weak material</td>
+<td style="text-align:left">Tectonic uplift</td>
+</tr>
+<tr>
+<td style="text-align:left">Sensitive material</td>
+<td style="text-align:left">Volcanic uplift</td>
+</tr>
+<tr>
+<td style="text-align:left">Collapsible material</td>
+<td style="text-align:left">Glacial rebound</td>
+</tr>
+<tr>
+<td style="text-align:left">Weathered material</td>
+<td style="text-align:left">Fluvial erosion of the slope toe</td>
+</tr>
+<tr>
+<td style="text-align:left">Sheared material</td>
+<td style="text-align:left">Wave erosion of the slope toe</td>
+</tr>
+<tr>
+<td style="text-align:left">Subterranean erosion (solution</td>
+<td style="text-align:left">piping)</td>
+</tr>
+<tr>
+<td style="text-align:left">Deposition loading of the slope or its crest</td>
+<td style="text-align:left">Glacial erosion of the slope toe</td>
+</tr>
+<tr>
+<td style="text-align:left">Adversely oriented mass discontinuities</td>
+<td style="text-align:left">Vegetation removal</td>
+</tr>
+<tr>
+<td style="text-align:left">The contrast in permeability and its effects on groundwater contrast in stiffness</td>
+<td style="text-align:left">Adversely oriented structural discontinuities</td>
+</tr>
+</tbody>
+</table>
+</span>
+
+            </section>
+        
+            <section >
+                <h3 style="text-align:right;"><a id="user-content-a-brief-list-of-landslide-conditioning-and-triggering-factors-continue" class="anchor" href="#a-brief-list-of-landslide-conditioning-and-triggering-factors-continue" aria-hidden="true"></a>A brief list of landslide conditioning and triggering factors (continue)</h3>
+<span style="display: block; text-align: left; font-size: smaller;">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Physical factors</th>
+<th style="text-align:left">Human Induced Factors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Intense, short period rainfall</td>
+<td style="text-align:left">Excavation of the slope or its toe</td>
+</tr>
+<tr>
+<td style="text-align:left">Rapid melt of deep snow</td>
+<td style="text-align:left">Loading of the slope or its crest</td>
+</tr>
+<tr>
+<td style="text-align:left">Prolonged high precipitation</td>
+<td style="text-align:left">Drawdown (of reservoirs)</td>
+</tr>
+<tr>
+<td style="text-align:left">Rapid drawdown following floods, high tides or breaching of natural dams</td>
+<td style="text-align:left">Mining and quarrying</td>
+</tr>
+<tr>
+<td style="text-align:left">Earthquake</td>
+<td style="text-align:left">Defective maintenance of drainage systems</td>
+</tr>
+<tr>
+<td style="text-align:left">Volcanic eruption</td>
+<td style="text-align:left">Water leakage from services</td>
+</tr>
+<tr>
+<td style="text-align:left">Breaching of crater lakes</td>
+<td style="text-align:left">Vegetation removal</td>
+</tr>
+<tr>
+<td style="text-align:left">Thawing of permafrost</td>
+<td style="text-align:left">Irrigation</td>
+</tr>
+<tr>
+<td style="text-align:left">Freeze and thaw weathering</td>
+<td style="text-align:left">Creation of dumps of very loose wastes</td>
+</tr>
+<tr>
+<td style="text-align:left">Shrink and swell weathering of expansive soils</td>
+<td style="text-align:left">Artificial vibration</td>
+</tr>
+</tbody>
+</table>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align: right;"><a id="user-content-landslide-classification" class="anchor" href="#landslide-classification" aria-hidden="true"></a>Landslide classification</h2>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>The existing landslide classification system (is convention based on the accordance that every landslide could be classified and formulated by Varnes (1978)) rely on combining principally <strong>material</strong> and <strong>movement type</strong>, complemented with the estimation of the <strong>activity state</strong> and <strong>velocity</strong>.</p>
+</li>
+<li>
+<p>The scheme was set up according to features that may be observed at once or with the minimum investigation, and without any reference to the causes of the landslide.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align: right;"><a id="user-content-landslide-classification-1" class="anchor" href="#landslide-classification-1" aria-hidden="true"></a>Landslide classification</h2>
+<span style="display: block; text-align: left; font-size: smaller;">
+<p>Landslide materials define and describe the type of the displaced material in the landslide before it was displaced and they are being classified as follows:</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-865203"><label class="task-list-item-label" for="task-item-865203"> Rock</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4665452"><label class="task-list-item-label" for="task-item-4665452"> Soil</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5438762"><label class="task-list-item-label" for="task-item-5438762"> Earth</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-324523"><label class="task-list-item-label" for="task-item-324523"> Mud</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6125549"><label class="task-list-item-label" for="task-item-6125549"> Debris</label></p>
+</li>
+</ul>
+<p>Displacement mechanism defines the landslide movement typology, which identified as six kinematical distinct types:</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4063273"><label class="task-list-item-label" for="task-item-4063273"> Falls</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3128441"><label class="task-list-item-label" for="task-item-3128441"> Topples</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3499204"><label class="task-list-item-label" for="task-item-3499204"> Slides</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8803553"><label class="task-list-item-label" for="task-item-8803553"> Flows</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9914363"><label class="task-list-item-label" for="task-item-9914363"> Spreads</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5771768"><label class="task-list-item-label" for="task-item-5771768"> Composite or Complex</label></p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align: right;"><a id="user-content-landslide-classification-2" class="anchor" href="#landslide-classification-2" aria-hidden="true"></a>Landslide classification</h2>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>In the end, by combining the two or more terms the overall classifications would be, for example, Rock-fall, Rock topples, Debris-slide, Debris-flow, Earth-slide, Earth-spread,…,etc.</br>
+</br></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center" colspan="2">Type of movement</th>
+<th style="text-align:center" colspan="3">TYPE OF MATERIAL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center" colspan="2"></td>
+<td style="text-align:center">Bedrock</td>
+<td style="text-align:center" colspan="2">Engineering Soils</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="3"></td>
+<td style="text-align:center">Predominantly coarse</td>
+<td style="text-align:center">Predominantly fine</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="2">Fall</td>
+<td style="text-align:center">Rock fall</td>
+<td style="text-align:center">Debris fall</td>
+<td style="text-align:center">Earth fall</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="2">Topples</td>
+<td style="text-align:center">Rock topple</td>
+<td style="text-align:center">Debris topple</td>
+<td style="text-align:center">Earth topple</td>
+</tr>
+<tr>
+<td style="text-align:center">Slides</td>
+<td style="text-align:center">Rotational</td>
+<td style="text-align:center">Rock slide</td>
+<td style="text-align:center">Debris slide</td>
+<td style="text-align:center">Earth slide</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">Translational</td>
+<td style="text-align:center">Rock slide</td>
+<td style="text-align:center">Debris slide</td>
+<td style="text-align:center">Earth slide</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="2">Lateral spreads</td>
+<td style="text-align:center">Rock spread</td>
+<td style="text-align:center">Debris spread</td>
+<td style="text-align:center">Earth spread</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="2">Flows</td>
+<td style="text-align:center">Rock flow</td>
+<td style="text-align:center">Debris flow</td>
+<td style="text-align:center">Earth flow</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="2"></td>
+<td style="text-align:center">(deep creep)</td>
+<td style="text-align:center">(soil creep)</td>
+<td style="text-align:center">Earth flow</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="2">Complex</td>
+<td style="text-align:center" colspan="3">Combination of two or more principal types of movement</td>
+</tr>
+</tbody>
+</table>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:left;"><a id="user-content-susceptibility-hazard-vulnerability-risk" class="anchor" href="#susceptibility-hazard-vulnerability-risk" aria-hidden="true"></a>Susceptibility </br>Hazard</br>Vulnerability</br>Risk</h2>
+<aside class="notes">
+<span style="display: block; text-align: justify; font-size: smaller;">
+Similar to the term landslide the terms hazard, susceptibility, susceptibility map and risk are intuitively similar and interchangeable with linguistically flexibilities. Therefore, it is pertinent to elaborate and articulate their meaning in the analytical, quantitative framework, which is consistent with the internationally approved terminology of Geo-Engineering communities. From this section and forward, their international approved terminology and articulation will be used only as such in order to avoid any misunderstandings.
+</span>
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslide-susceptibility" class="anchor" href="#landslide-susceptibility" aria-hidden="true"></a>Landslide susceptibility</h2>
+<blockquote>
+<p><span style="display: block; text-align: justify; font-size: smaller; ">&quot;a spatial probability of landslide occurrence which analyses and handle the spatial distribution and the magnitude estimation of a landslide which may or may not potentially occurs in a given area”.</span></p>
+</blockquote>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>The landslide magnitude can be expressed by variant landslide descriptor such as total area, volume, relative displacement or velocity…etc.</p>
+</li>
+<li>
+<p>However, the susceptibility is an explicitly one single component that handles the spatial probability in purely spatial frame, with no temporal component.</p>
+</li>
+<li>
+<p>This introduces other terms as potential complements (sometimes partly match) to the term “landslide susceptibility”, such as landslide potential, sensitivity, relative hazard, total landslide density and so forth.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslide-hazard" class="anchor" href="#landslide-hazard" aria-hidden="true"></a>Landslide hazard</h2>
+<blockquote>
+<p><span style="display: block; text-align: justify; font-size: smaller; ">“the probability of damaging and/or landslide occurrence in given an area within a given period of time resulting in temporal-spatial probability which also known as the probability of recurrence ($P_t$)”</span></p>
+</blockquote>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>Landslide hazard usually considered as the temporal extension to the space component of the susceptibility.</p>
+</li>
+<li>
+<p>This explains the confusion between hazard and susceptibility. However, as long as the temporal component is noticeable a distinction can be made.</p>
+</li>
+<li>
+<p>It should be noted that according to Lee and Jones (2004), susceptibility can be depicted as a special case of the hazard in form of a single stack of single dimension instead of a stack of dimensions (time-series).</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-the-element-at-risk" class="anchor" href="#the-element-at-risk" aria-hidden="true"></a>The Element at Risk</h2>
+<blockquote>
+<p><span style="display: block; text-align: justify; font-size: smaller; ">The Element at Risk (ER) is the ensemble of any entity or component of the terrain such as human personal, settlements, goods, equipment’s, infrastructure or even the environment that are potentially affected or endangered by a susceptible damaging landslide hazard.</span></p>
+</blockquote>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>It may involve the following (but not everything):</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5164785"><label class="task-list-item-label" for="task-item-5164785"> Human personal, population, settlements</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5625957"><label class="task-list-item-label" for="task-item-5625957"> Goods, equipments and objects of personal property</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1930456"><label class="task-list-item-label" for="task-item-1930456"> Infrastructure and engineering artwork-crafts</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2093065"><label class="task-list-item-label" for="task-item-2093065"> Economic activities</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2582950"><label class="task-list-item-label" for="task-item-2582950"> The surrounding environment and environmental valuables</label></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Natural hazard exists only is there exist an element at risk pre-subjugated, or exposed to a potentially by damaging natural event or phenomena. However, natural phenomena remain natural event and/or phenomena unless it there’s an element at risk present endangered.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-vulnerability" class="anchor" href="#vulnerability" aria-hidden="true"></a>Vulnerability</h2>
+<blockquote>
+<p><span style="display: block; text-align: justify; font-size: smaller; ">Vulnerability (V) is the measure of exposure toward the hazard by expressing the potential exposure damages, which gives the possibility to quantify the degree of loss of an element at risk within the affected or endangered area.</span></p>
+</blockquote>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>Depending on the element at risk, the vulnerability can vary spatially, temporally and individually and even subtypes could be derived for vulnerability at hand.</p>
+</li>
+<li>
+<p>The vulnerability is important parameters to estimate the risk.
+</span></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-risk" class="anchor" href="#risk" aria-hidden="true"></a>Risk</h2>
+<blockquote>
+<p><span style="display: block; text-align: justify; font-size: smaller; font-size: smaller;">Risk (R) can be formulated using Vulnerability and it’s denoted as a measure of landslide occurrence probability by taking into account the severity of its effects.</span></p>
+</blockquote>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>In reality, risk comprehension is difficult to conceptualize considering the fact that it resides in the future, especially to for planning and decision making processes as those require a pre-planning estimation to be able to act upon the risk in advance before disasters strike.</p>
+</li>
+<li>
+<p>Additionally, while susceptibility and hazard analysis are not influenced by the choice of the element at risk, Risk itself is and could be categorized and further segregated into different categories according to the element at risk or even the process at hand.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslide-susceptibility-map" class="anchor" href="#landslide-susceptibility-map" aria-hidden="true"></a>Landslide susceptibility map</h2>
+<blockquote>
+<p><span style="display: block; text-align: justify; font-size: smaller; font-size: smaller;">Landslide susceptibility map (LSM) contains a subdivision of the terrain in zones that have a different spatial likelihood that landslides may occur.</span></p>
+</blockquote>
+<span style="display: block; font-size: smaller;">
+<ul>
+<li>
+<p>The likelihood may be indicated either qualitatively (as high, moderate low, and not susceptible) or quantitatively (e.g. as the density in number per square kilometers, or area affected per square kilometer).</p>
+</li>
+<li>
+<p>Landslide susceptibility maps should indicate the zones where landslides have occurred in the past and where they may occur in future and possibly also the run‐out zones.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslide-inventory" class="anchor" href="#landslide-inventory" aria-hidden="true"></a>Landslide inventory</h2>
+<blockquote>
+<p><span style="display: block; text-align: justify; font-size: smaller; font-size: smaller;">Landslide inventory is a collection of landslide features in a certain area for a certain period, preferably in digital form with spatial information related to the location (as points or polygons) combined with attribute information.</span></p>
+</blockquote>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>These attributes should ideally contain information on the type of landslide, date of occurrence or relative age, size and/or volume, current activity, and causes.</p>
+</li>
+<li>
+<p>Landslide inventories are either continuous in time or provide so‐called event‐based landslide inventories, which are inventories of landslides that happened as a result of a particular triggering event (rainfall, earthquake).</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:left;"><a id="user-content-landslide-assessment" class="anchor" href="#landslide-assessment" aria-hidden="true"></a>Landslide Assessment</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4314270"><label class="task-list-item-label" for="task-item-4314270"> Definition</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-915870"><label class="task-list-item-label" for="task-item-915870"> Concepts</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5317431"><label class="task-list-item-label" for="task-item-5317431"> Assumptions</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5250594"><label class="task-list-item-label" for="task-item-5250594"> Modeling Approach</label></li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-definition" class="anchor" href="#definition" aria-hidden="true"></a>Definition</h2>
+<blockquote>
+<p><span style="display: block; font-size: smaller;">“systematic process of gathering of the available or potential information’s, processing and/or modeling using those information’s and formulate (forming) a judgment about landslides in a transient work-flow”.</span></p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-concepts" class="anchor" href="#concepts" aria-hidden="true"></a>Concepts</h2>
+<span style="display: block; text-align: left; font-size: smaller;float:left;width: 40%;">
+The work-flow usually consists of:
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2074048"><label class="task-list-item-label" for="task-item-2074048"> Initiation (i.e. the definition of the objectives, fundamental details, the scale of the analysis, assessment type and study area).</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2541513"><label class="task-list-item-label" for="task-item-2541513"> Acquisition (i.e. gathering of the required information, data and background information’s).</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5478129"><label class="task-list-item-label" for="task-item-5478129"> Analysis and modeling (of landslide susceptibility and hazard).</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2961209"><label class="task-list-item-label" for="task-item-2961209"> Evaluation.</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3054168"><label class="task-list-item-label" for="task-item-3054168"> Recommending and advising (i.e. usually optional).</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7147444"><label class="task-list-item-label" for="task-item-7147444"> Reporting, publishing, and visualizing.</label></p>
+</li>
+</ul>
+</span>
+<div class="mermaid" style='display: block;float:right; width: 50%;'>
+graph TB;
+    A(Initiation) --> B(Acquisition)
+    B --> C(Analysis and modeling)
+    C --> D(Evaluation)
+    D --> E(Recommending and advising)
+    E --> F(Reporting, publishing, and visualizing)
+</div> 
+<aside class="notes">
+Despite the fact the all Landslide susceptibility studies share this common work-flow template, the choice of assessment approach remain different due to the fact that each case study have its unique set of properties that are different from the others such as the aspect of the problematic to be solved that highly influence choices like modeling approach, micro processes and sub-stages of the data acquisition and analysis.
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-assumptions" class="anchor" href="#assumptions" aria-hidden="true"></a>Assumptions</h2>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8204561"><label class="task-list-item-label" for="task-item-8204561"> Slope failures do not occur randomly or by chance, but as a result of the conjunction of different conditions, governed by different physical and Geotechnical processes and behaviors.</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3661183"><label class="task-list-item-label" for="task-item-3661183"> Landslides leave more-or-less distinct footprints (upon activation or after a reasonable period of inactivity) that could be mapped in the field or remotely.</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6248750"><label class="task-list-item-label" for="task-item-6248750"> Similar landslides may similarly and share common results (i.e. footprints).</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5762964"><label class="task-list-item-label" for="task-item-5762964"> Implicitly, conditions that are not taken into account in the model do not change systematically in time or space (time-space invariant).</label></p>
+</li>
+</ul>
+</span>
+<aside class="notes">
+Moreover, landslide investigations and landslide assessment revolve around several empirical principles and assumptions articulated in the works of (e.g. Chacón et al. (2006) and Guzzetti et al. (2012)) such as:
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-modeling-approach" class="anchor" href="#modeling-approach" aria-hidden="true"></a>Modeling Approach</h2>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>Based on model’s <strong>predictability</strong> we can separate models into two distinct and different cases:</p>
+<ul>
+<li>
+<p>Predictive models</p>
+</li>
+<li>
+<p>Non-Predictive models</p>
+</li>
+</ul>
+</li>
+<li>
+<p>On the other hand, based on the <strong>method of treating and handling the landslide assessment</strong>, we can denote:</p>
+<ul>
+<li>
+<p>Direct methods</p>
+</li>
+<li>
+<p>Indirect methods</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+<aside class="notes">
+<ul>
+<li>
+<p><strong>Direct methods</strong> are the expert-opinion-driven approach that relies on expert evaluation of the direct relationship between conditioning factors and landslides occurrences during a survey campaign on the site of failure.</p>
+</li>
+<li>
+<p><strong>Indirect methods</strong> rely on mapping and analyzing a different set of conditioning factors and their relative contribution to the occurrence of slopes failure resulting in a relationship between the landslide condition factors and landslides occurrences.</p>
+</li>
+</ul>
+<p>These models usually require fulfilling general assumptions principles and to apply noted in (see the postulates in Chapter ‎2.3) and specific structure and type of the input data such as the availability of thematic preferences called variables or conditioning factors and reliable landslide inventory or multi-temporal inventory. Even though the resulting model provides numerical, i.e. quantitative measurements (usually in form of spatial and/or temporal probability of occurrence), relative scoring is yet preferred due to a great deal of assumptions which trouble the quantitative way of expressing the landslide susceptibility, risk or hazard.</p>
+<p>In reality, is a combination of both methods is made in order to determine the conditions under slopes failures occur. However, the most usual classification of the methodological model approaches (Table ‎2.9) is the following:</p>
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-modeling-approach-1" class="anchor" href="#modeling-approach-1" aria-hidden="true"></a>Modeling Approach</h2>
+<ul>
+<li>
+<p><strong>Heuristic</strong> or <strong>Expert-driven approach</strong></p>
+</li>
+<li>
+<p><strong>Physically-based</strong> or <strong>Deterministic approach</strong></p>
+</li>
+<li>
+<p><strong>Statistical approach</strong></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-heuristic-or-expert-driven-approach" class="anchor" href="#heuristic-or-expert-driven-approach" aria-hidden="true"></a>Heuristic or Expert-driven approach</h2>
+<blockquote>
+<p><span style="display: block; text-align: justify; font-size: smaller;">is an expert’s opinion-driven approach of weighting conditioning factors that relate to a landslide inventory in order to determine landslide zonation. The weighting process is achieved through hierarchical leveling process of the landslide conditioning factors.</span></p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-physically-based-or-deterministic-approach" class="anchor" href="#physically-based-or-deterministic-approach" aria-hidden="true"></a>Physically-based or Deterministic approach</h2>
+<blockquote>
+<p><span style="display: block; text-align: justify; font-size: smaller;">highly focus on quantitatively generating an index called “stability index” by calculating the “safety factors”. This involves some complicated evaluation of safety factor that required detailed measurement of a handful of parameter’s that influence slopes.</span></p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-statistical-approach" class="anchor" href="#statistical-approach" aria-hidden="true"></a>Statistical approach</h2>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>statistical approach in particular is able to extracts and obtain a relationship that relates landslide occurrence to the conditioning factors very efficiently for large scale analysis.</p>
+</li>
+<li>
+<p>depending on data availability it may relate the values, distributions, aggregations and other data features, which introduce an objective prognostic dimension to the implemented model.</p>
+</li>
+<li>
+<p>if an advanced methods such as Machine Learning (ML) is implemented which, can introduce more depth to statistical approach by incorporates a broad range of complex learning procedures that are effective in solving problems of landslides such as susceptibility assessment.</p>
+</li>
+<li>
+<p>This modeling capability can be highlighted in three main areas:</p>
+<ul>
+<li>
+<p>The system’s deterministic model is computationally expensive and ML can be used as a code accelerator tool.</p>
+</li>
+<li>
+<p>There is no deterministic model but an empirical ML-based model can be derived using the existing data.</p>
+</li>
+<li>
+<p>Classification problems.</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+<aside class="notes">
+Statistical approach, Methods and models based on this approach are based on the assumption, which require, collecting and preparing an accurate database, i.e. a geospatial database consist of an inventory map of past and present landslide occurrences and set and/or combination of conditioning factors, with maximum details available. Then, models based on these methods are trained and validated using that database and the resulting models are used to generate landslide occurrence probabilities in order to forecast the future landslide’s areas using past and present landslide occurrences.
+<aside>
+
+            </section>
+        
+            <section >
+                <h3 style="text-align:right;"><a id="user-content-summary-of-the-available-landslide-assessment-modeling-approaches" class="anchor" href="#summary-of-the-available-landslide-assessment-modeling-approaches" aria-hidden="true"></a>Summary of the available landslide assessment modeling approaches</h3>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Modeling approach</th>
+<th style="text-align:center">Description Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>Heuristic or expert-driven</em></td>
+<td style="text-align:center">Use thematic data (variables such as geological, geomorphological, Land use, infrastructure and so forth) and suffer from uncertainty related to the subjectivity of the practitioner in both, data preparation and modeling itself rending the approach more of “opinion-oriented” method.</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>Statistical</em></td>
+<td style="text-align:center">Can suffer from uncertainty due to the data preparation, but the tendency of using advanced techniques, such as Machine Learning algorithms, might be helpful due to their capability of canceling-out these sources of uncertainty.</td>
+</tr>
+<tr>
+<td style="text-align:center"><em>Physically-based or Deterministic</em></td>
+<td style="text-align:center">Regard only the simplest mechanisms and introduce numerous assumptions into the modeling (Montgomery and Dietrich, 1994), thus their uncertainty is relatively high. In regional scales implement such approach is not feasible.</td>
+</tr>
+</tbody>
+</table>
+</span>
+<aside class="notes">
+In respect to the preceding passages, only heuristic approach methods can be qualified as a direct method (it can be an indirect method but to a limited extent). On the other hand, only **statistical approach** methods can be qualified as a **predictive approach**, but could also be enlisted among **non-predictive**, while the **remaining three** only qualify as **non-predictive** approaches. Only statistical approach based methods seems to be a viable option to use, especially the more advanced (predictive) models such as ML turn out to be the most promising and least limited for the exploration because physical-based models are capable of delivering the highest prediction accuracy require a fair amount of detailed data information’s to provide reliable results, which is unbelievably expensive and heuristic or expert-driven approach is limited and very controversial as it requires expert-opinion, which make the model unreliable due to uncertainties and subjectiveness.
+</aside>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section data-background="orange">
+            <!-- .slide: data-background="orange" -->
+<h1 style="text-align:right;color:black;"><a id="user-content-case-study" class="anchor" href="#case-study" aria-hidden="true"></a>Case</br>study</h1>
+<aside class="notes">
+The following paragraphs will focus on presenting the essential backgrounds about Mila basin rather informally; in order to stay committed the main problematic of this research. Details such as geology, hydrogeology and so forth, about the study area are well documented and presented in comprehensive details in different literature (e.g. (Athmania et al., 2009; Athmania et al., 2010; Chettah, 2009; Coiffait, 1992; Côte, 1974; Delga, 1969; Durand Delga, 1969; Labiod, 2009; Mebarki, 1982; Mebarki and Thomas, 1988; Mounira, 2002; Remmache, 2006; Rullan-Perchirin, 1985; Rullan-Perchirin and Rullan, 1987; Zouaoui, 2008)).
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geography" class="anchor" href="#geography" aria-hidden="true"></a>Geography</h2>
+<span style="display: block; text-align: right; float: right; width: 55%; ">
+<img width=100% src="./img/ls_situation.jpg">
+</span>
+<span style="display: block; text-align: justify; font-size: smaller; width: 45%; ">
+<ul>
+<li>
+<p>Mila Basin is located between longitudes of $5^∘ 55’15.44″E$ and $6^∘ 49’42.19’E$, and latitudes of $36^∘ 36’39.01″N$ and $36^∘ 11’6.82″N$.</p>
+</li>
+<li>
+<p>covering an area of approximately $2760 km^2$ distributed over 42 municipalities.</p>
+</li>
+<li>
+<p>Geographically, the study area is fully surrounded by mountain ranges such as <strong>M’Cid Aicha</strong> and <strong>Sidi Driss</strong> from the North; <strong>Djebel Ossmane</strong> and <strong>Grouz</strong> by the South; <strong>Djebel Akhal</strong>, <strong>Chettaba</strong> and <strong>Kheneg</strong> from the East; and <strong>Djebel Boucherf</strong> and <strong>Oukissene</strong> by the West.</p>
+</li>
+<li>
+<p>The study area, is technically a high elevated basin (mean elevation &gt; 500 m).</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landuse-and-vegetation" class="anchor" href="#landuse-and-vegetation" aria-hidden="true"></a>Landuse and Vegetation</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=100% src="./img/ls_fac14.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; width: 45%;">
+<ul>
+<li>
+<p>Landuse is mostly for bare lands, cereals crops or wild herbs.</p>
+</li>
+<li>
+<p>This low-density vegetation is making the basin a hotspot for agriculture investments and farming industry (i.e. cattle breeding, poultry, stock farming…etc.).</p>
+</li>
+<li>
+<p>However, such vegetation accelerates land degradation and instabilities by soil erosions.
+</span></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-climate" class="anchor" href="#climate" aria-hidden="true"></a>Climate</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img src="./img/ls_rainfall.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 50%;">
+<ul>
+<li>
+<p>In Mila basin, usually, the wet season is relatively short compared to a longer dry season. The local climate can be divided into two separate entities:</p>
+<ul>
+<li>
+<p>Semi-arid with a mild winter denoted by significance difference in temperature (reaching  $40^∘C$ and below $0^∘C$  during summer and winter, respectively) and reaching an average of 500 mm/year.</p>
+</li>
+<li>
+<p>Sub-humid fresh climate (typical for a mountainous landscape) surrounding the first entity and denoted by relatively dry and hot dry season, fresh and humid wet season. The precipitation mean is fluctuating between 900 and 1200 mm/year.
+</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<aside class="notes">
+<ul>
+    <li><input type="checkbox" checked> First task</li>
+    <li><input type="checkbox"> Second task</li>
+</ul>
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-hydrology-and-hydrogeology" class="anchor" href="#hydrology-and-hydrogeology" aria-hidden="true"></a>Hydrology and Hydrogeology</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=100% src="./img/ls_hydro.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 50%;">
+<ul>
+<li>
+<p>The study area, is technically part of much larger watershed called “Kébir Rhumel”.</p>
+</li>
+<li>
+<p>Mila basin is characterized by asymmetrical elongated geometrical form (along the East-West direction) drained by a dense and hierarchical hydrographic network in N-S direction depending on the stream.</p>
+</li>
+<li>
+<p>In terms of hydrology, the hydrographic network streams are mostly depleted of water during the dry season.</p>
+</li>
+<li>
+<p>During wet season everything change and the overwhelming flow  highly contribute to soils erosion.</p>
+</li>
+<li>
+<p>This case in particular, exposes human settlements and constructions near the hydrographic network streams to risk of land instabilities.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-hydrology-and-hydrogeology-1" class="anchor" href="#hydrology-and-hydrogeology-1" aria-hidden="true"></a>Hydrology and Hydrogeology </h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=100% src="./img/ls_hydro.jpg"> 
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 50%;">
+<ul>
+<li>
+<p>from a hydrogeological perspective, the study area does not possess any important aquifer.</p>
+</li>
+<li>
+<p>However, theoretically  there exist formations with to formulate and (or be) aquifers for ground water bodies such as:</p>
+<ul>
+<li>
+<p><strong>Quaternary formations</strong> with mainly <strong>Alluvium deposits</strong>.</p>
+</li>
+<li>
+<p><strong>Sand, sandy and/or sandstone deposits available</strong> in the <strong>Mio-Pliocene formations</strong>, especially if it is deposited in lenses.</p>
+</li>
+<li>
+<p><strong>Lacustrine limestone’s</strong> have a high potential of retaining high capacities of water.</p>
+</li>
+<li>
+<p><strong>High infiltration zones</strong> such as shear zones (Major tectonic accident like faults), are suitable areas for water infiltration and seepage where different springs and resurgences can upsurge randomly (frequently observed during foundation excavation for infrastructure project, i.e. Beni Haroun dam, RN27 and RN79 maintenance…etc.).</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-seismicity" class="anchor" href="#seismicity" aria-hidden="true"></a>Seismicity</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=100% src="./img/ls_sismicity.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 50%;">
+<ul>
+<li>
+<p>Seismicity in the study area is <strong>moderate</strong> according to CRAAG (Le Centre de Recherche en Astronomie Astrophysique et Géophysique).</p>
+</li>
+<li>
+<p>Mila basin is located within Zone <strong>II a</strong>, and is characterized by moderate seismic activities.</p>
+</li>
+<li>
+<p>Moreover, the basin has suffered previously in multiple occasions from various intensive seismic events reaching <strong>VIII-IX</strong> intensity and varies in terms of magnitude.</p>
+</li>
+<li>
+<p>But overall, the upper parts of the basin are previously effected by seismic activities in the past.
+</span></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geology" class="anchor" href="#geology" aria-hidden="true"></a>Geology</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=100% src="./img/ls_geology.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 50%;">
+<ul>
+<li>
+<p>the study area belongs to a paleogeographic domain known as “domaine tellien”, which is technically, the oriental segment of a “chaîne” formally known as “chaîne des maghrébides”.</p>
+</li>
+<li>
+<p>More specifically, a larger neogene basin known by the “Constantinois basin” encompasses the study area.</p>
+</li>
+<li>
+<p>Essentially the local geology of the study area consists of different lithostratigraphic units and can be summarized into two groups, called “series”.</p>
+<ul>
+<li>
+<p>Substratum/Bedrock series.</p>
+</li>
+<li>
+<p>Post-nappes series.</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geology-1" class="anchor" href="#geology-1" aria-hidden="true"></a>Geology</h2>
+<span style="display: block; text-align: justify; font-size: smaller;">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Unit</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">Period</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center" rowspan="2">Post-nappes</td>
+<td style="text-align:center" colspan="2">Quaternary</td>
+<td style="text-align:center">Alluvium, colluvium, scree, detritus deposits and slopes formations</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="2">Neogene</td>
+<td style="text-align:center">Predominantly detritus</td>
+</tr>
+<tr>
+<td style="text-align:center" rowspan="6">Substratum</td>
+<td style="text-align:center">Paleogene</td>
+<td style="text-align:center">Eocene</td>
+<td style="text-align:center">Limestone, cherty limestone, and platted marls.</td>
+</tr>
+<tr>
+<td style="text-align:center">Paleocene</td>
+<td style="text-align:center">Opaque to somber marls</td>
+</tr>
+<tr>
+<td style="text-align:center" rowspan="2">Cretaceous</td>
+<td style="text-align:center">Upper and Mid-Upper Cretaceous</td>
+<td style="text-align:center">Marl dominance</td>
+</tr>
+<tr>
+<td style="text-align:center">Lower Cretaceous</td>
+<td style="text-align:center">Mainly marly limestone and neritic limestone</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="2">Jurassic</td>
+<td style="text-align:center">Mostly thick carbonate formations</td>
+</tr>
+<tr>
+<td style="text-align:center" colspan="2">Triassic</td>
+<td style="text-align:center">Evaporitic and clayey deposits.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Substratum/Bedrock series, which formulate both the lower base and the bedrock of the basin and consist of Triassic to Paleogene formations.</p>
+</li>
+<li>
+<p>Post-nappes series constitute a cover to the bedrock series and consist of Neogene to Quaternary formations. These series, in particular, were slightly affected by recent neotectonic deformations.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geology-2" class="anchor" href="#geology-2" aria-hidden="true"></a>Geology</h2>
+<span style="display: block; text-align: justify;text-justify: auto; font-size: xx-large;">
+<ul>
+<li>
+<p>In term of tectonic activities, the study area shows a tectonic complexity due to some severe conjugation of folds, faults, and thrusts of different ages and styles that are the results of two main tectonic events.</p>
+</li>
+<li>
+<p>The first phase was the “Atalsic phase”, which is responsible for forming major recumbent fold structures oriented in NE-SW direction.</p>
+</li>
+<li>
+<p>The second was the “Alpine phase”, which is responsible for breaking and sliding existing formations one over the other to form gigantic thrust faults, which resulted in thrust belt of structures oriented in N-S direction.</p>
+</li>
+<li>
+<p>According to Coiffait (1992), there exist two general systems of lineaments for the basin based on the orientations of the structures generated by the aforementioned major tectonic events:</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7724446"><label class="task-list-item-label" for="task-item-7724446"> Diagonal system, with NE-SW and NW-SE orientations. This system is dated to the late Eocene. This system is directly responsible for creating and generating some important structures (i.e., folds and Horst-Graben) in the basin. These structures were the source of the detritus materials during the Neogene.</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-603233"><label class="task-list-item-label" for="task-item-603233"> N-S, E-W lineament system, also known (also known as “Vertical lineament system”). This system belongs to a recent compression phase that is responsible for the current morpho-structure of the study area.</label></p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geomorphology" class="anchor" href="#geomorphology" aria-hidden="true"></a>Geomorphology</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=100% src="./img/ls_geomorph.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 50%;">
+<ul>
+<li>
+<p>Geomorphological speaking, Mila basin is composed of multiple terrains of carbonate formations emerging deep within the existing heterogeneous neogene formations.</p>
+</li>
+<li>
+<p>These structures are the result of the tectonic heritage of the pre-disposition (i.e. pre-sedimentation) of the neogene detritus formations.</p>
+</li>
+<li>
+<p>Such configuration is responsible for the morphological heterogeneous terrains in term of the observed spatial morphological entities.</p>
+</li>
+<li>
+<p>For example, mountainous landscape of ridges and hills that encompass rugged channels and pits is the most observed landscape.</p>
+</li>
+<li>
+<p>This prominent pattern is generally stretching over large proportions, especially northern parts of the study area where the terrains elevate rapidly.</p>
+</li>
+</ul>
+<p style="style=width:" 40%=""></span> </p>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geomorphology-1" class="anchor" href="#geomorphology-1" aria-hidden="true"></a>Geomorphology</h2>
+<div style="text-align: right; float: right; width: 55%;"> 
+<canvas data-chart="doughnut">
+Planar,Pit,Channel,Pass (saddle),Ridge,Peak
+% morphometric features, 11.581, 0.257, 41.625, 0.806, 45.494, 0.237
+<!-- 
+{
+"data": {
+    "datasets": [{"backgroundColor": ["#949FB1","#FF6384","#36A2EB","#FFCE56","#4BC0C0","#9966FF"]}
+    ]
+},
+"options": {"responsive":true,"aspectRatio":1}
+}
+-->
+</canvas>
+</div>
+<span style="display:block; text-align: justify; font-size: smaller; float: left; width: 45%;">
+<ul>
+<li>
+<p>According to PDAU (Plan Directeur d’Amenagement et d’Urbanisme) reports, this prominent landscape is essentially characterized by reddish hills and ridges with hummocks and/or undulated terrains of bare to less vegetated lands.</p>
+</li>
+<li>
+<p>During, the wet season, a substantial green vegetation covers these terrains, whereas, during the tillage period only the reddish brown color of the neogene formations (i.e. clay and marl), is noticeable.</p>
+</li>
+</ul>
+</span>
+<aside class="notes">
+<!-- |Feature|	Percentage (%)|
+|:--:	|:--:|
+|Planar	|11.581|
+|Pit	|0.257|
+|Channel	|41.625|
+|Pass (saddle)	|0.806|
+|Ridge	|45.494|
+|Peak	|0.237| -->
+<aside>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section data-background="orange">
+            <!-- .slide: data-background="orange" -->
+<h1 style="text-align:right;color:black;"><a id="user-content-research-workflow" class="anchor" href="#research-workflow" aria-hidden="true"></a>Research</br>Workflow</h1>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-overall-research-workflow" class="anchor" href="#overall-research-workflow" aria-hidden="true"></a>Overall Research Workflow</h2>
+<span style="display:block; width: auto;  height: 720px; ">
+<img src="./img/abstract2.png">
+</span>
+<aside class="notes">
+<span style="display:block; text-align: justify; ">
+<ul>
+<li>
+<p><a href="#/7/3">Construct a spatial database that will serve as an input dataset for the study from the landslide inventory map and the landslide conditioning factors.</a></p>
+</li>
+<li>
+<p><a href="#/7/28">Analyzing and optimizing landslide conditioning factor based on Pearson Correlation Coefficients and Variance Inflation Factors analyses results.</a></p>
+</li>
+<li>
+<p><a href="#/7/31">Model configuration and implementation using the appropriate model hyperparameters optimization strategy</a></p>
+</li>
+<li>
+<p><a href="#/7/40">Model training, validation, and comparison using the appropriate performance indicator metrics.</a></p>
+</li>
+<li>
+<p><a href="#/7/43">Landslide susceptibility maps generation, assessment, and evaluation based on the appropriate assessment-evaluation strategy</a></p>
+</li>
+</ul>
+</span>
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-overall-research-workflow-1" class="anchor" href="#overall-research-workflow-1" aria-hidden="true"></a>Overall Research Workflow</h2>
+<span style="display:block; text-align: justify; font-size: smaller; ">
+<ul>
+<li>
+<p><a href="#/7/3">Construct a spatial database that will serve as an input dataset for the study from the landslide inventory map and the landslide conditioning factors.</a></p>
+</li>
+<li>
+<p><a href="#/7/28">Analyzing and optimizing landslide conditioning factor based on Pearson Correlation Coefficients and Variance Inflation Factors analyses results.</a></p>
+</li>
+<li>
+<p><a href="#/7/31">Model configuration and implementation using the appropriate model hyperparameters optimization strategy</a></p>
+</li>
+<li>
+<p><a href="#/7/40">Model training, validation, and comparison using the appropriate performance indicator metrics.</a></p>
+</li>
+<li>
+<p><a href="#/7/43">Landslide susceptibility maps generation, assessment, and evaluation based on the appropriate assessment-evaluation strategy</a></p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geospatial-database" class="anchor" href="#geospatial-database" aria-hidden="true"></a>Geospatial Database</h2>
+<span style="display:block; text-align: left; font-size: smaller;">
+<ul>
+<li>
+<p>Constructing the geospatial database is one of the most crucial steps in a successful landslide susceptibility modeling. This process is usually consist of constructing:</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1525956"><label class="task-list-item-label" for="task-item-1525956"> an inventory database of landslides from historic events (past and present).</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8422539"><label class="task-list-item-label" for="task-item-8422539"> conditioning factors database that control and determine the failure mechanism and the triggering process.</label></p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+<aside class="notes">
+The conditioning factors and landslide inventory available in the geospatial database are acquired from different sources and they are represented in 2D GIS thematic raster layers, entailing different levels of generalization and different scales. Subsequently, a generalization to common 30 m cells raster resolution is plausible  (Fell et al. 2008), considering the fact that the most critical data, have reasonably, a small scale that turned out to be too detailed for the research purpose (e.g. Geological map are 1:50000). Therefore, the geospatial database have been recompiled and resampled (either by up-sampling or down-sampling) to an optimal 30 m raster resolution. As the matter of facts, an additional generalization (by aggregating similar classes) took place over such inputs.
+Finally, assembling of the geospatial database into an input dataset has been prepared by QGis, SagaGIS and R. The resulting database was stored in HDF, JSON and Array formats, which proved to be efficient in absence of a fully integrated standardized solution for data exchange between ML modules and GIS platforms.
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-inventory-map" class="anchor" href="#inventory-map" aria-hidden="true"></a>Inventory Map</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=100% src="./img/ls_inv.jpg">
+</span>
+<span style="display:block; text-align: justify; font-size: smaller; width: 50%;">
+<ul>
+<li>
+<p>A detailed landslide inventory map has been compiled from 1985–2017 with only slide failure types have been elaborated using mainly:</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7234434"><label class="task-list-item-label" for="task-item-7234434"> Historical records provided publicly by the local agencies with 531 landslide event.</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7776523"><label class="task-list-item-label" for="task-item-7776523"> Google Earth Pro® software 47 landslide event were detected and mapped (from 2000 to 2017).</label></p>
+</li>
+</ul>
+</li>
+<li>
+<p>On the other hand, the non-landslide samples were easily obtained by random sampling a unique 578 sample site from public stability maps available at DUC using PAW and PDAU.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-inventory-map-1" class="anchor" href="#inventory-map-1" aria-hidden="true"></a>Inventory Map</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=100% src="./img/ls_example.jpg">
+</span>
+<span style="display: block; text-align: left; float: left; width: 50%; ">
+<img width=100% src="./img/ls_examplee.jpg">
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslide-examples" class="anchor" href="#landslide-examples" aria-hidden="true"></a>Landslide Examples</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=764 height=573 src="./img/ls_example2.jpg">
+</span>
+<span style="display: block; text-align: left; float: left; width: 50%; ">
+<img width=764 height=573 src="./img/ls_example5.jpg">
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslide-examples-1" class="anchor" href="#landslide-examples-1" aria-hidden="true"></a>Landslide Examples</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=764 height=573 src="./img/ls_example3.jpg">
+</span>
+<span style="display: block; text-align: left; float: left; width: 50%; ">
+<img width=764 height=573 src="./img/ls_example4.jpg">
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslide-examples-2" class="anchor" href="#landslide-examples-2" aria-hidden="true"></a>Landslide Examples</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img width=764 height=573 src="./img/ls_example6.jpg">
+</span>
+<span style="display: block; text-align: left; float: left; width: 50%; ">
+<img width=764 height=573 src="./img/ls_example7.jpg">
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-conditioning-factors-1" class="anchor" href="#conditioning-factors-1" aria-hidden="true"></a>Conditioning Factors </h2>
+<span style="display:block; text-align: justify; font-size: smaller; ">
+<ul>
+<li>
+<p>In susceptibility analysis, landslide conditioning factors need to be: Operational, <strong>Complete</strong>, <strong>Non-Uniform</strong>, <strong>Measurable</strong>, <strong>Non-Redundant</strong>.</p>
+</li>
+<li>
+<p>However, the selection process of landslide factors is <strong>very subjective</strong> comes with <strong>difficulties</strong> (i.e., the study case, scale of the analysis, and data availability, general guidelines for GIS-based studies…etc.).</p>
+</li>
+<li>
+<p>The conditioning factors were selected for this case study based on:</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6848976"><label class="task-list-item-label" for="task-item-6848976"> Field survey observations.</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7039449"><label class="task-list-item-label" for="task-item-7039449"> Survey campaign reports achieved by local authorities.</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2232383"><label class="task-list-item-label" for="task-item-2232383"> The most commonly used factors in the literature for landslide susceptibility analysis.</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1040712"><label class="task-list-item-label" for="task-item-1040712"> Geo-environmental factors of the study area that may directly or indirectly affect landslides, and can be used as predisposing factors.</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1270879"><label class="task-list-item-label" for="task-item-1270879"> The scale of the analysis and data availability for the case study.</label></p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+<aside class="notes">
+which explain the variations in landslide susceptibility modeling studies in term of the conditioning factors used for the analysis. However, despite the fact that there are no clear guidelines about the proper factors to use for such a kind of analysis (Ayalew et al., 2005).
+<p>In this case study, a total of 16 conditioning factors that describe Mila basin terrain attributes, such as factors regarding geo-morphometric ground surface morphology, hydrological, geotechnical and subsurface, geological and environmental features, as well as some derived synthetic features; were considered as suitable for this thesis.</p>
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geo-morphometric-data" class="anchor" href="#geo-morphometric-data" aria-hidden="true"></a>Geo-morphometric Data</h2>
+<span style="display:block; text-align: justify; font-size: smaller; ">
+<ul>
+<li>
+<p>Geo-morphometric or topographic data parameters were generated from Digital Elevation Model (DEM) of the study area at near 30 meters cell resolution from NASA Shuttle Radar Topography Mission Global 1 arc second (SRTMGL1) mission.</p>
+</li>
+<li>
+<p>The geomorphometric parameters used in this case study are listed as follows:</p>
+<ul>
+<li>
+<p><a href="#/7/8">Altitude</a></p>
+</li>
+<li>
+<p><a href="#/7/9">Slope angle</a></p>
+</li>
+<li>
+<p><a href="#/7/10">Slope aspects</a></p>
+</li>
+<li>
+<p><a href="#/7/11">Landforms</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-altitude" class="anchor" href="#altitude" aria-hidden="true"></a>Altitude</h2>
+<span style="display: block; text-align: right; float: right; width: 50%; ">
+<img src="./img/ls_fac1.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Altitude a float raster.</p>
+</li>
+<li>
+<p>suggesting that the linear increase in potential energy with altitude is associated with higher susceptibility to landslides in the higher elevated grounds.</p>
+</li>
+<li>
+<p>It actually, represents the DEM of the terrain, described earlier.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-slope-angle" class="anchor" href="#slope-angle" aria-hidden="true"></a>Slope angle</h2>
+<span style="display: block; text-align: right; float: right; width: 50%;">
+<img src="./img/ls_fac2.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Slope angle (Slopes) is a float raster.</p>
+</li>
+<li>
+<p>Slope angle is highly important due to the fact that slope stability is directly related with landslide phenomenology (i.e. direct physical relationship).</p>
+</li>
+<li>
+<p>If the slope angle is ($\theta$), then the greater ($\theta$), the higher the possibility of slopes instability and vice-versa.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-slope-aspects" class="anchor" href="#slope-aspects" aria-hidden="true"></a>Slope aspects</h2>
+<span style="display: block; text-align: right; float: right; width: 50%;">
+<img src="./img/ls_fac3.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Slope aspects (Aspects) is a float raster.</p>
+</li>
+<li>
+<p>Slope aspects refers to the spatial exposure of the ground elements (e.g. azimuth) by controlling the micro-climatic parameters such as:</p>
+<ul>
+<li>
+<p>exposure to sunlight.</p>
+</li>
+<li>
+<p>wind.</p>
+</li>
+<li>
+<p>rainfall intensity.</p>
+</li>
+<li>
+<p>slope material properties.</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landforms" class="anchor" href="#landforms" aria-hidden="true"></a>Landforms</h2>
+<span style="display: block; text-align: right; float: right; width: 50%;">
+<img src="./img/ls_fac4.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Landforms is a float raster.</p>
+</li>
+<li>
+<p>Landforms derives a classification for the landscape based on three-part geometric signatures (i.e., slopes, convexity and surface texture) as the most common form of landslide progression on the slope.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-hydrological-data" class="anchor" href="#hydrological-data" aria-hidden="true"></a>Hydrological Data</h2>
+<span style="display:block; text-align: justify; font-size: smaller; ">
+<ul>
+<li>
+<p>Water in general, is undoubtedly plays a primordial role in the triggering process of landslides and decrease slopes stability by effects such as:</p>
+<ul>
+<li>
+<p>Increasing or decreasing the shear strength, cohesion, permeability and the overall mass of the slope.</p>
+</li>
+<li>
+<p>Weathering of slopes materials.</p>
+</li>
+<li>
+<p>Eroding of slopes footing.</p>
+</li>
+<li>
+<p>Saturating slopes.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>These effects, influence slopes stability balance and can either increase or decrease landslides depending on water presence.</p>
+</li>
+<li>
+<p>Thus, the following parameters were used to express the hydrological effect on the landslide susceptibility in the study area:</p>
+<ul>
+<li>
+<p><a href="#/7/13">Rainfall</a></p>
+</li>
+<li>
+<p><a href="#/7/17">Topographic Wetness Index</a></p>
+</li>
+<li>
+<p><a href="#/7/15">Distance to Hydrographic Network</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-rainfall" class="anchor" href="#rainfall" aria-hidden="true"></a>Rainfall</h2>
+<span style="display: block; text-align: right; float: right; width: 50%;">
+<img src="./img/ls_fac5.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Rainfall is a float raster.</p>
+</li>
+<li>
+<p>Rainfall was generated from the Annual Mean of Precipitation (AMP) for the period of 1985 to 2017, using the Inverse Euclidean Distance Weighed (IDW) method.</p>
+<ul>
+<li>
+<p><strong>persistent periods of intense</strong> to <strong>moderate rainfall</strong>, where a high amount of water runoff water infiltrate and saturate formations and soils located beneath slopes (especially steep slopes, and can also introduce groundwater levels fluctuations depending of the amount of water infiltrated).</p>
+</li>
+<li>
+<p>On the other hand, <strong>short and intense</strong> to <strong>moderate rainstorms</strong> and precipitations, less amount of water infiltrated deep underground, but affects slope stability indirectly by an intensive erosive processes generated by the high amount of dissipated water on the surface ground.</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-topographic-wetness-index" class="anchor" href="#topographic-wetness-index" aria-hidden="true"></a>Topographic Wetness Index</h2>
+<span style="display: block; text-align: right; float: right; width: 50%;">
+<img src="./img/ls_fac6.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Topographic Wetness Index is float raster.</p>
+</li>
+<li>
+<p>TWI pinpointing the effect of local topography on certain locations and the size of the saturated source area of run-off generation by defining terrain retention (i.e. moisture distribution), which is correlated with the hydrogeological conditions, that influence surface run-off and infiltration.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-distance-to-hydrographic-network" class="anchor" href="#distance-to-hydrographic-network" aria-hidden="true"></a>Distance to Hydrographic Network</h2>
+<span style="display: block; text-align: right; float: right; width: 50%;">
+<img src="./img/ls_fac7.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Distance to Hydrographic Network is a float-buffer raster.</p>
+</li>
+<li>
+<p>Distance to Hydrographic Network introduces the influence of linear erosion on the slope stability.</p>
+</li>
+<li>
+<p>Foregoing discussion suggests that areas closer to the stream lines are more affected than remote ones, thus buffering out the landslide susceptibility toward the ridges of local watersheds.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geological-data" class="anchor" href="#geological-data" aria-hidden="true"></a>Geological Data</h2>
+<span style="display:block; text-align: justify; font-size: smaller; ">
+<ul>
+<li>
+<p>Geological data for the study area were compiled from a total of seven hard-copy maps covering the study area and each is 1:50000 scale provided by ASGA (L’Agence du Service Géologique de l’Algérie).</p>
+</li>
+<li>
+<p>These maps were further simplified to meet the requirements of this case study . Therefore, the generalization to a raster map with 30m resolution was justifiable.</p>
+</li>
+<li>
+<p>The map was also used to derive the synthetic data such as the Euclidean distance buffer to geological structures.</br></p>
+<ul>
+<li>
+<p><a href="#/7/17">Lithology</a></p>
+</li>
+<li>
+<p><a href="#/7/18">Stratigraphy</a></p>
+</li>
+<li>
+<p><a href="#/7/19">Distance to Faults</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-lithology" class="anchor" href="#lithology" aria-hidden="true"></a>Lithology</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/ls_fac8.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Lithology is a discrete (i.e. categorical) raster.</p>
+</li>
+<li>
+<p>Lithology represent the outcropping lithology derived after the geological maps, as mentioned above.</p>
+</li>
+<li>
+<p>The map depicts 7 lithological units namely, Alluvium, Claystone, Colluvium-Detritus Deposits-Scree, Limestone, Marl, Neogene Complex, and Sandstone that are different in their physical and mechanical behaviors. Thus, differently prone to instabilities.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-stratigraphy" class="anchor" href="#stratigraphy" aria-hidden="true"></a>Stratigraphy</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/ls_fac9.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Stratigraphy is a discrete raster</p>
+</li>
+<li>
+<p>Stratigraphy that represent the stratigraphy of the outcropping lithology derived after geological map, as mentioned above.</p>
+</li>
+<li>
+<p>The map depicts 7 chronostratigraphic units namely, Quaternary, Neogene, Paleogene, Upper Cretaceous, Upper-Mid Cretaceous and Lower Cretaceous and Triassic-Jurassic.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-distance-to-faults" class="anchor" href="#distance-to-faults" aria-hidden="true"></a>Distance to Faults</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/ls_fac10.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Distance to Faults is a float-buffer raster.</p>
+</li>
+<li>
+<p>Distance to Faults represent the distance from the available geological structures such as faults and joints in the geological map using IDW. Since faults and joints, were considered as zones of weakest shear resistance (limited only to a residual shear resistance) and also affected by the infiltrated water and fill material, it is logical to assume that instabilities are more prone in the areas closer to these structures.</p>
+</li>
+<li>
+<p>In more seismically active areas such parameter could be much more appreciated since the shear resistance faces further effects, related to the fault dynamics.
+</span></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-geotechnical-data" class="anchor" href="#geotechnical-data" aria-hidden="true"></a>Geotechnical Data</h2>
+<span style="display:block; text-align: justify; font-size: smaller; ">
+<ul>
+<li>
+<p>Geotechnical data were directly from obtained Mila and Constantine local agencies, i.e. municipalities, at 30 meters resolution.</p>
+</li>
+<li>
+<p>Geotechnical data data vary in term of the overall influence on landslide occurrences, but certainly, introduce relative interpretation on the geotechnical context of the landslides distribution patterns at the study area.</p>
+<ul>
+<li>
+<p><a href="#/7/21">Soil Textures</a></p>
+</li>
+<li>
+<p><a href="#/7/22">Depth to Bedrock</a></p>
+</li>
+<li>
+<p><a href="#/7/23">Bulk Density</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-soil-textures" class="anchor" href="#soil-textures" aria-hidden="true"></a>Soil Textures</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/ls_fac11.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Soil Textures a discrete raster.</p>
+</li>
+<li>
+<p>Soil Textures represents the available soils units  available on the study area according to the relative proportion of sand, silt, and clay content.</p>
+</li>
+<li>
+<p>The soil textures types were assigned according to USDA54 classification  and 6 soils units that are different in their physical, mechanical and geotechnical behavior were obtained, i.e. Sandy Clay, Clay Loam, Silty Clay Loam, and Sandy Clay Loam.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-depth-to-bedrock" class="anchor" href="#depth-to-bedrock" aria-hidden="true"></a>Depth to Bedrock</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/ls_fac12.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Depth to Bedrock is float raster.</p>
+</li>
+<li>
+<p>epth to Bedrock forms one of most the important factors for assessing the stability of the soil and landslide susceptibility of the land.</p>
+</li>
+<li>
+<p>With the increase in soil depth to bedrock, the tendencies of the soil to absorb moisture also increase. Thus, reducing runoff rate. Hence, shallow soil is considered to be more unstable and prone to landslide than the deep soil.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-bulk-density" class="anchor" href="#bulk-density" aria-hidden="true"></a>Bulk Density</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/ls_fac13.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Bulk Density is float raster</p>
+</li>
+<li>
+<p>Bulk Density in general have tight relationship with soil properties, such as soil textures and depth to bedrock, especially in areas that are affected by landslides where this parameter can help in understanding the interaction between the soil structure and the geotechnical behavior of the slopes.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-environmental-data" class="anchor" href="#environmental-data" aria-hidden="true"></a>Environmental Data</h2>
+<span style="display:block; text-align: justify; font-size: smaller; ">
+<ul>
+<li>
+<p>Environmental information’s particularly regarding parameters that may influence landslides slopes stabilities and landslide distribution.</p>
+</li>
+<li>
+<p>These information’s, beside natural environment oriented information’s, are human-related one way or another, and it’s rarely incorporated in landslide susceptibility analysis, due various reason (e.g. the lack the data.</p>
+</li>
+<li>
+<p>The following parameters were used to express the environmental effect on landslide susceptibility in the study area:</p>
+<ul>
+<li>
+<p><a href="#/7/25">Landuse</a></p>
+</li>
+<li>
+<p><a href="#/7/26">Soil types</a></p>
+</li>
+<li>
+<p><a href="#/7/27">Distance to Roads</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landuse" class="anchor" href="#landuse" aria-hidden="true"></a>Landuse</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/ls_fac14.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Landuse is a discrete raster.</p>
+</li>
+<li>
+<p>Landuse is considered as one of most influential parameters on landslides occurrence. Theoretically, barren land and shifting cultivation are more prone to landslides than other landuse unit.</p>
+</li>
+<li>
+<p>It could be happened because there is no deep root which can hold the soil. Contrarily, forest areas tend to decrease the landslide occurrences due to the natural anchorage provided by the tree roots.</p>
+</li>
+<li>
+<p>Landuse classes are categorized into Artificial Surfaces, Forests, Grasslands, CropLand and Bareland.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-soil-types" class="anchor" href="#soil-types" aria-hidden="true"></a>Soil types</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/ls_fac15.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Soil types is a discrete raster.</p>
+</li>
+<li>
+<p>Soil types represent the available soils units  available on the study area. The map depicts 6 soils units, i.e. Calcisols, Cambisols, Luvisols, Leptosols, Podzols, Regosols, Vertisols.</p>
+</li>
+<li>
+<p>These units are drastically different in their water retention and root cohesion behaviors. Thus differently prone to erosion, which directly and/or indirectly instabilities.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-distance-to-roads" class="anchor" href="#distance-to-roads" aria-hidden="true"></a>Distance to Roads</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/ls_fac16.jpg">
+</span>
+<span style="display: block; float: left; text-align: justify; font-size: smaller; width: 45%;">
+<ul>
+<li>
+<p>Distance to Roads is a float-buffer raster.</p>
+</li>
+<li>
+<p>Distance to Roads represent the distance from the roads network using IDW in SagaGIS.</p>
+</li>
+<li>
+<p>Human induced factors may raise the probability of landslide occurrences. Cutting the toe of steep slope and filling along the road are the common human activities on the hilly areas which increase the susceptible area to landslide.</p>
+</li>
+<li>
+<p>It is convinced; when the many landslide events were near by cutting road area (e.g. RN 79a and RN27). Therefore, the best way to contain the effect of road factor in landslide study is by making a buffer on the upslope part.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-analyzing-and-optimizing-landslide-conditioning-factors" class="anchor" href="#analyzing-and-optimizing-landslide-conditioning-factors" aria-hidden="true"></a>Analyzing and Optimizing Landslide Conditioning Factors</h2>
+<span style="display:block; text-align: justify; font-size: smaller; ">
+<ul>
+<li>
+<p>It’s common for input datasets used in landslide susceptibility analysis to have high correlation among certain conditioning factors that lead to a faulty modeling with erroneous system analysis.</p>
+</li>
+<li>
+<p>A possible solution can be performing a multicollinearity analysis on the selected the conditioning factors.</p>
+</li>
+</ul>
+<blockquote>
+<p>multicollinearity (also collinearity) is a phenomenon in which one predictor variable in a multiple regression model can be linearly predicted from the others with a substantial degree of accuracy</p>
+</blockquote>
+<ul>
+<li>To detect/quantify multicollinearity among variables, PCC can be performed, but in most cases, PCC are not usually sufficient, then VIF is implemented.
+</span></li>
+</ul>
+<span style="display: block; text-align: left; float: left; width: 50%;">
+<blockquote>
+PCC matrix depicts the correlation coefficients between all the possible pairs of values in a table. It used to identify/visualize patterns in the data
+</blockquote>
+</span>
+<span style="display: block; text-align: left; float: right; width: 50%;">
+<blockquote>
+VIF quantifies the extent of correlation between one predictor and the other predictors in a model. It is used for diagnosing collinearity/multicollinearity
+</blockquote>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-training-and-testing-datasets-partitioning" class="anchor" href="#training-and-testing-datasets-partitioning" aria-hidden="true"></a>Training And Testing Datasets Partitioning</h2>
+<span style="display: block; text-align: right; float: right; width: 40%;">
+<img src="./img/cv_example.png">
+</span>
+<span style="display:block; text-align: left; font-size: smaller; width: 55%; ">
+<ul>
+<li>
+<p>In this case study, the input dataset was randomly resampled into 5 times repeated 10 k-folds cross-validation approach, aimed at optimizing models hyper parameters and optimizing the final models.</p>
+</li>
+<li>
+<p>It’s important to understand that the implemented resampling approach is a trade-off in term of speed, accuracy, computational cost and complexity, but also effective it reduces:</p>
+<ul>
+<li>
+<p>The variance introduce by simple k fold cross validation.</p>
+</li>
+<li>
+<p>The split randomness that comes with holdout-split resampling (test-train split).</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-training-and-testing-datasets-partitioning-1" class="anchor" href="#training-and-testing-datasets-partitioning-1" aria-hidden="true"></a>Training And Testing Datasets Partitioning</h2>
+<span style="display: block; text-align: right; float: right; width: 40%;">
+<img src="./img/cv_example.png">
+</span>
+<span style="display:block; text-align: left; font-size: smaller; width: 55%; ">
+<ul>
+<li>
+<p>This would allow the input dataset to be used for three different purposes:</p>
+<ul>
+<li>
+<p>Tuning models hyperparameters.</p>
+</li>
+<li>
+<p>Train models with this subset using after optimal parameters are found.</p>
+</li>
+<li>
+<p>Models validation, assessment, and comparison.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>It is important to mention that the training area has been selected by sampling instances randomly and uniformly throughout the area.
+</span></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:left;"><a id="user-content-models-implementation-and-configuration" class="anchor" href="#models-implementation-and-configuration" aria-hidden="true"></a>Models Implementation and Configuration</h2>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-516250"><label class="task-list-item-label" for="task-item-516250"> Implemented Models</label></p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8116808"><label class="task-list-item-label" for="task-item-8116808"> Models Optimization</label></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:left;"><a id="user-content-implemented-models" class="anchor" href="#implemented-models" aria-hidden="true"></a>Implemented Models</h2>
+<ul>
+<li>
+<p><a href="#/7/33">Random Forest</a></p>
+</li>
+<li>
+<p><a href="#/7/34">Gradient Boosting Machine</a></p>
+</li>
+<li>
+<p><a href="#/7/35">Logistic Regression</a></p>
+</li>
+<li>
+<p><a href="#/7/36">Artificial Neural Network</a></p>
+</li>
+<li>
+<p><a href="#7/37">Support Vector Machine</a></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-random-forest" class="anchor" href="#random-forest" aria-hidden="true"></a>Random Forest</h2>
+<span style="display: block; text-align: right; float: right; width: 45%;">
+<img src="./img/rf_example.png">
+</span>
+<span style="display:block; text-align: left; font-size: smaller; width: 50%; ">
+<ul>
+<li>
+<p>Random Forest is a supervised classification algorithm and is an ensemble approach to DT models such that each tree fits a data subset sampled independently using bootstrapping (Breiman et al., 2003; Breiman and Cutler, 2004).</p>
+</li>
+<li>
+<p>RF from the name itself is composed of many individual DT models, hence the use of the term ‘forest’ (Figure 11).</p>
+</li>
+<li>
+<p>RF is known to provide a robust accuracy rate with respect to outliers in predictors due to the use of random selection at each split node depending on two data objects, namely, Out-Of-Bag (OOB) and proximities (Breiman, 2001).
+</span></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-gradient-boosting-machine" class="anchor" href="#gradient-boosting-machine" aria-hidden="true"></a>Gradient Boosting Machine</h2>
+<span style="display: block; text-align: right; float: right; width: 55%;">
+<img src="./img/gbm_example.png">
+</span>
+<span style="display:block; text-align: left; font-size: smaller; width: 45%; ">
+<ul>
+<li>
+<p>Gradient Boosting Machine (GBM) or simply Gradient boosting is an ensemble of weak learners, namely, regression trees that benefit from boosting by adding weak learners using a functional gradient descent.</p>
+</li>
+<li>
+<p>The rationale behind GBM is that the learning process consecutively introduces weak learners using a functional gradient descent in stage-wise additive approach sequentially allowing the algorithm to enhance the overall accuracy simply by readjusting previous error terms when new weak learners are added.</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-logistic-regression" class="anchor" href="#logistic-regression" aria-hidden="true"></a>Logistic Regression</h2>
+<span style="display:block; text-align: justify; font-size: smaller;">
+<ul>
+<li>
+<p>Logistic regression (LR) is a particular case of the generalized linear mode configured to provide a binary form of result. LR is named after its core function, the logistic function (also called sigmoid function).</p>
+</li>
+<li>
+<p>Basically, logistic regression relates the probability of landslide occurrence to a link function (in this case “logit”) assumed to contain the conditioning factors on which landslide occurrence may depend, where the relationship between the occurrence and its dependency on conditioning factors can be expressed by the following (Equation below):</p>
+</li>
+</ul>
+<p>$$\hat{P}=1/(1+e^(-z) )=e^z/(1+e^z)$$</p>
+<ul>
+<li>where $\hat{P}$ is the probability of a landslide occurrence and has a range of [0, 1] on an S-shaped curve; $z$ is a linear fitting equation that involves the supplied set of landslide-related variables in the form of the following equation (Equation above):</li>
+</ul>
+<p>$$Z = b_0 + b_1 X_1 + b_2 X_2 + ⋯ + b_n X_n$$</p>
+<ul>
+<li>where $b_0$ is the intercept of the model; $b_n$ is the partial regression coefficients; and $X_n$ is the conditioning variable.
+</span></li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h3 style="text-align:right;"><a id="user-content-artificial-neural-network" class="anchor" href="#artificial-neural-network" aria-hidden="true"></a>Artificial Neural Network</h3>
+<span style="display: block; text-align: right; float: right; width:40%; ">
+<img src="./img/nnet_example2.png">
+</span>
+<span style="display:block; text-align: left; font-size: smaller; width: 50%; ">
+<ul>
+<li>
+<p>The ANN is set of processes inspired by existing pattern recognizance system existing in biological organisms like human brains (Ripley 2007).</p>
+</li>
+<li>
+<p>The basic idea of ANN is MLP (i.e. multi-layer perceptron) which consist of set hidden nodes known as “neurons” interconnected in predefined paths. The MLP are known as “universal approximators”.</p>
+</li>
+<li>
+<p>The multidimensional input information’s are transformed using a set of non-linear and/or linear transformations known as the “activation function” to assimilate certain format (i.e. -1 to 1, 0 to…etc.). Afterwards, the ANN trained using gradient descent that will optimize the cost function (usually predefined). The model considered trained only if the gradient descent converge to global optima.
+</span></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-support-vector-machine" class="anchor" href="#support-vector-machine" aria-hidden="true"></a>Support Vector Machine</h2>
+<span style="display: block; text-align: right; float: right; width: 40%;">
+<img src="./img/svm_example.png">
+</span>
+<span style="display:block; text-align: left; font-size: smaller; width: 55%; ">
+<ul>
+<li>
+<p>Support vector machine (SVM) is one of the new mathematics tools, which is used as a universal constructive learning procedure based on the statistical learning theory rather than loose analogies with natural learning systems.</p>
+</li>
+<li>
+<p>SVMs provide non-linear solutions to regression and classification problems by transforming the input variables in a large-dimension space, whose inner product is given by positive definite kernel functions, then trained using dual optimization techniques with constraints.</p>
+</li>
+<li>
+<p>Typically, SVMs are designed for two-class problems where both positive and negative objects exist. For two-classes classification problems, SVMs seek to find a hyperplane in the feature space that maximally separates the two target classes.
+</span></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-models-optimization" class="anchor" href="#models-optimization" aria-hidden="true"></a>Models Optimization</h2>
+<ul>
+<li>
+<p>In rare cases, hand-tuning models hyperparameters are enough but in general, there exist methods to do such a task; i.e., Grid search, Random search, Gradient-Based Optimization.</p>
+</li>
+<li>
+<p>However, those methods are widely used and still considered as the main option due to the simplicity and ease of their implementation.</p>
+</li>
+<li>
+<p>Yet, they produce very poor results that lead to:</p>
+<ol>
+<li>
+<p>costly evaluations (especially when the computational budget is limited).</p>
+</li>
+<li>
+<p>incorrect assessments about the implemented models, whether they are genuinely bad or simply badly tuned.</p>
+</li>
+</ol>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-models-optimization-1" class="anchor" href="#models-optimization-1" aria-hidden="true"></a>Models Optimization</h2>
+<ul>
+<li>
+<p>To avoid the aforementioned problems, we consider a state-of-art technique called Sequential Model-Based Optimization (SMBO) (also known as Bayesian optimization).</p>
+</li>
+<li>
+<p>SMBO can efficiently optimize models by working on a strictly reduced budget for function evaluations and hyperparameters optimization of expensive black-box models.</p>
+</li>
+<li>
+<p>Generally, better results can be achieved using SMBO in fewer experiments compared to traditional techniques (Grid search, Random search, Gradient-Based Optimization) due to:</p>
+<ol>
+<li>
+<p>the ability to reason about the quality of experiments before they are run.</p>
+</li>
+<li>
+<p>benefiting from the “adaptive capping” to avoid long runs.</p>
+</li>
+</ol>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:left;"><a id="user-content-model-training-validation-comparison" class="anchor" href="#model-training-validation-comparison" aria-hidden="true"></a>Model Training</br>Validation</br>Comparison</h2>
+<ul>
+<li>
+<p>Parametric Performance Metrics</p>
+</li>
+<li>
+<p>Non-Parametric Performance Metrics</p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-parametric-performance-metrics" class="anchor" href="#parametric-performance-metrics" aria-hidden="true"></a>Parametric Performance Metrics</h2>
+<span style="display:block; text-align: left; font-size: smaller; ">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">No</th>
+<th style="text-align:left">Measure</th>
+<th style="text-align:left">Equation</th>
+<th style="text-align:left">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Accuracy (ACC)</td>
+<td style="text-align:left">$ACC=\frac{Number\ of\ correct\ predictions}{Total\ number\ of\ predictions}$</td>
+<td style="text-align:left">The proportion of landslide and non-landslide pixels that the resulting models correctly classified</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">The area under the ROC curve (AUC)</td>
+<td style="text-align:left">Integral over the graph that results from computing False Positive Rate (FPR) and True Positive Rate (TPR) for many different thresholds.</td>
+<td style="text-align:left">The probability that the classifier will correctly rank a randomly chosen landslide pixel to be more indicative of a landslide than a randomly chosen non-landslide</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">Cohen’s kappa (Kappa)</td>
+<td style="text-align:left">$Kappa=\frac{(O-E)}{(1-E)}$</td>
+<td style="text-align:left">Measure the agreement between true classes and the classifications which refer to the ability to measure landslide models reliability by expressing the proportion of observed agreement beyond that expected by chance.</td>
+</tr>
+</tbody>
+</table>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-non-parametric-performance-metrics" class="anchor" href="#non-parametric-performance-metrics" aria-hidden="true"></a>Non-Parametric Performance Metrics</h2>
+<span style="display:block; text-align: left; font-size: smaller; ">
+<ul>
+<li>
+<p>The Wilcoxon signed-rank test at the 5% significance level was used for each pair of models in order to detect individual differences in model performances.</p>
+</li>
+<li>
+<p>Basically, the Wilcoxon signed-rank test relies on a null hypothesis that there is no difference between the performances of the landslide models. Then, $p.value$ and $z.values$ are calculated and used to determine the probability of rejecting or accepting the null hypothesis.</p>
+<p>if:</p>
+<ul>
+<li>
+<p>$p.value &lt; 0.05$</p>
+</li>
+<li>
+<p>$−1.96 &gt; z.value &gt; +1.96$</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+<span style="display: block; text-align: left; float: left; width: 45%;">
+a significant difference between the two compared models exists and It is safe to assume that the null hypothesis is not valid (can be rejected).
+</span>
+<span style="display: block; text-align: left; float: right; width: 45%;">
+a Non-significant difference between the two compared models exists and It is safe to assume that the null hypothesis is  valid (can be not rejected).
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-lsm-generation-and-assessment" class="anchor" href="#lsm-generation-and-assessment" aria-hidden="true"></a>LSM Generation and Assessment </h2>
+<span style="display:block; text-align: left; font-size: smaller; ">
+<ul>
+<li>
+<p>Models with close or even similar performance results and they do not necessarily generate similar predictive output surface.</p>
+</li>
+<li>
+<p>The spatial predictive output surface is critical for assessing the quality of landslide susceptibility models.</p>
+</li>
+<li>
+<p>Overall, by performing a sufficiency analysis on the predictive output surface in the form of summary statistics (that is, landslide density distribution and the area extent covered by each susceptibility class)</p>
+</li>
+<li>
+<p>Using these statistics it is possible to gain an insight into the model’s quality by:</p>
+<ul>
+<li>
+<p>The spatial predictive output surface details.</p>
+</li>
+<li>
+<p>The results of the landslide distribution analysis.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The sufficiency based on the assumption that: “a model is sufficient and accurate when there is an increase in the landslide density ratio when moving from low to high susceptible classes and high susceptibility classes cover small areas extent”.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Susceptibility Class</th>
+<th style="text-align:center">Very Low</th>
+<th style="text-align:center">Low</th>
+<th style="text-align:center">Moderate</th>
+<th style="text-align:center">High</th>
+<th style="text-align:center">Very High</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Probability Range</td>
+<td style="text-align:center">From 0 to 0.05</td>
+<td style="text-align:center">From 0.05 to 0.30</td>
+<td style="text-align:center">From 0.30 to 0.60</td>
+<td style="text-align:center">From 0.60 to 0.75</td>
+<td style="text-align:center">From 0.75 to 1</td>
+</tr>
+</tbody>
+</table>
+</span>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section data-background="orange">
+            <!-- .slide: data-background="orange" -->
+<h1 style="text-align:right;color:black;"><a id="user-content-results" class="anchor" href="#results" aria-hidden="true"></a>Results</h1>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-analyzing-and-optimizing-landslide-conditioning-factors-1" class="anchor" href="#analyzing-and-optimizing-landslide-conditioning-factors-1" aria-hidden="true"></a>Analyzing and Optimizing Landslide Conditioning Factors </h2>
+<span style="display: block; text-align: justify; font-size: smaller; float: right; width: 35%;">
+<img src="./img/pcc.jpg">
+PCC correlogram
+</span>
+<span style="display: block; text-align: justify; float: left; width: 50%;">
+<ul>
+<li>
+<p>The Pearson’s correlogram values (Figure 7) are lower than the critical threshold of 0.7, which indicates high collinearity.</p>
+</li>
+<li>
+<p>The highest Pearson’s correlation was between TWI and the Slopes at 0.54.</p>
+</li>
+<li>
+<p>In fact, a high correlation is expected between the generated variables and the source variables (i.e., TWI, Slopes, and Altitude that were derived from the DEM).</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <span style="display: block; text-align: justify; font-size: smaller;  float: right; width: 50%;">
+<img src="./img/vif.jpg">
+VIF results chart
+</span>
+<span style="display: block; text-align: justify; float: right; width: 50%;">
+<ul>
+<li>On the other hand, the VIF results, show that all factors should be used since the highest value is less than the theoretical critical value of 5.</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-model-training" class="anchor" href="#model-training" aria-hidden="true"></a>Model Training </h2>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-model-evaluation-and-comparison" class="anchor" href="#model-evaluation-and-comparison" aria-hidden="true"></a>Model Evaluation and Comparison </h2>
+<!-- Acc,AUC,Kappa Index
+GBM,0.82,0.897,0.64
+LR,0.78,0.858,0.56
+NNET,0.809,0.888,0.619
+RF,0.817,0.896,0.635
+SVM,0.802,0.881,0.605 -->
+<!-- ,Acc,AUC,Kappa Index
+GBM,0.82,0.897,0.64
+LR,0.78,0.858,0.56
+NNET,0.809,0.888,0.619
+RF,0.817,0.896,0.635
+SVM,0.802,0.881,0.605 -->
+<div style="text-align: right; font-size: smaller; float: right; width: 55%;"> 
+<canvas data-chart="bar">
+Model,GBM,LR,NNET,RF,SVM
+Acc,0.82,0.78,0.809,0.817,0.802
+AUC,0.897,0.858,0.888,0.896,0.881
+Kappa Index,0.64,0.56,0.619,0.635,0.605
+<!-- 
+{
+"data": {
+    "datasets": [{"backgroundColor": ["#FF6384","#FF6384","#FF6384","#FF6384","#FF6384"]},{"backgroundColor": ["#FFCE56","#FFCE56","#FFCE56","#FFCE56","#FFCE56"]},{"backgroundColor": ["#9966FF","#9966FF","#9966FF","#9966FF","#9966FF"]}
+    ]
+},
+"options": {"responsive":true,"aspectRatio":1}
+}
+-->
+</canvas>
+The overall performances of the trained landslide models
+</div>
+<span style="display: block; text-align: left; font-size: smaller;  float: left; width: 40%;">
+<p>The Overall performance results show:</p>
+<ul>
+<li>
+<p>The results obtained in this study show that all the implemented models achieved high performance (AUC &gt; 0.88, Acc &gt; 80% and kappa &gt; 0.60).</p>
+</li>
+<li>
+<p>GBM $\rightarrow$ RF $\rightarrow$ NNET $\rightarrow$ SVM $\rightarrow$ LR</p>
+</li>
+<li>
+<p>All the models have <strong>“a substantial agreement”</strong> between the observed and the predicted landslides expressed in term of a kappa index ranging between 0.5605 and 0.6405.</p>
+</li>
+<li>
+<p>The AUC and Acc values range from 0.8575 to 0.8967, and 0.7803 to 0.8203, respectively, indicate that all the models have <strong>“very good”</strong> predictive capabilities</p>
+</li>
+</ul>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-roc-curves-of-the-implemented-models" class="anchor" href="#roc-curves-of-the-implemented-models" aria-hidden="true"></a>ROC curves of the implemented models</h2>
+<span style="display: block; text-align: left; font-size: smaller;  float: right; width: 50%;">
+<img src="./img/auc.jpg">
+<p>Receiver Operating Characteristic (ROC) curves of the implemented models</p>
+</span>
+<span style="display: block; text-align: left; float: left; width: 40%;">
+<ul>
+<li>
+<p>However, two ensemble trees models (GBM and RF) yielded the highest prediction results compared to the others.</p>
+</li>
+<li>
+<p>This better performance is confirmed to be statistically significant with the used Wilcoxon signed-rank test.
+</span></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-model-evaluation-and-comparison-1" class="anchor" href="#model-evaluation-and-comparison-1" aria-hidden="true"></a>Model Evaluation and Comparison</h2>
+<span style="display: block; text-align: left; font-size: smaller;  float: left; width: 35%;">
+<ul>
+<li>
+<p>The Pairwise results show:</p>
+<ul>
+<li>
+<p>there is a systematic difference in the performance results between each pair of models.</p>
+</li>
+<li>
+<p>except for the GBM and RF pair, where the difference in performance was found to be statistically insignificant (that is, p-value ≥ 0.05 and −1.96 ≤ z-value ≤ +1.96, so, the null hypothesis was accepted).</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+<div style="text-align: left; font-size: smaller; float: right; width: 55%;"> 
+<table>
+<thead>
+<tr>
+<th style="text-align:center">No.</th>
+<th style="text-align:center">Pairwise comparison</th>
+<th style="text-align:center"><em>z.Value</em></th>
+<th style="text-align:center"><em>p</em>.Value</th>
+<th style="text-align:center">Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">GBM vs. RF</td>
+<td style="text-align:center">−0.579</td>
+<td style="text-align:center">0.562</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">GBM vs. LR</td>
+<td style="text-align:center">6.111</td>
+<td style="text-align:center">0.000</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">GBM vs. NNET</td>
+<td style="text-align:center">3.606</td>
+<td style="text-align:center">0.001</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">GBM vs. SVM</td>
+<td style="text-align:center">5.266</td>
+<td style="text-align:center">0.000</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">RF vs. LR</td>
+<td style="text-align:center">6.149</td>
+<td style="text-align:center">0.000</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">RF vs. NNET</td>
+<td style="text-align:center">2.905</td>
+<td style="text-align:center">0.004</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">RF vs. SVM</td>
+<td style="text-align:center">4.025</td>
+<td style="text-align:center">0.000</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">SVM vs. LR</td>
+<td style="text-align:center">5.589</td>
+<td style="text-align:center">0.000</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">SVM vs. NNET</td>
+<td style="text-align:center">−3.223</td>
+<td style="text-align:center">0.001</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">NNET vs. LR</td>
+<td style="text-align:center">5.995</td>
+<td style="text-align:center">0.000</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-landslide-susceptibility-maps" class="anchor" href="#landslide-susceptibility-maps" aria-hidden="true"></a>Landslide Susceptibility Maps</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="#/8/10">GBM</a></th>
+<th style="text-align:center"><a href="#/8/11">RF</a></th>
+<th style="text-align:center"><a href="#/8/12">NNET</a></th>
+<th style="text-align:center"><a href="#/8/13">SVM</a></th>
+<th style="text-align:center"><a href="#/8/14">LR</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img width="150%" src="./img/gbm.jpg"></td>
+<td style="text-align:center"><img width="150%" src="./img/rf.jpg"></td>
+<td style="text-align:center"><img width="150%" src="./img/nnet.jpg"></td>
+<td style="text-align:center"><img width="150%" src="./img/svm.jpg"></td>
+<td style="text-align:center"><img width="150%" src="./img/lr.jpg"></td>
+</tr>
+</tbody>
+</table>
+<p>The implemented models successfully generated susceptibility maps with a fine and smooth prediction surface.</p>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-the-generated-landslide-susceptibility-maps" class="anchor" href="#the-generated-landslide-susceptibility-maps" aria-hidden="true"></a>The generated landslide susceptibility maps</h2>
+<div style="text-align: left; font-size: smaller; float: right; width: 60%;"> 
+<canvas data-chart="bar">
+Model,GBM,LR,NNET,RF,SVM
+Very High, 75.61,74.39,68.34,68.17,56.23
+High,16.61,20.07,22.49,21.63,27.34
+Moderate,4.84,4.33,4.84,5.36,9.00
+Low,2.92,1.21,4.15,4.84,6.75
+Very Low,0.0,0.0,0.17,0.0,0.69
+<!-- 
+{
+"data": {
+    "datasets": [{"backgroundColor": ["#FF6384","#FF6384","#FF6384","#FF6384","#FF6384"]},{"backgroundColor": ["#FFCE56","#FFCE56","#FFCE56","#FFCE56","#FFCE56"]},{"backgroundColor": ["#9966FF","#9966FF","#9966FF","#9966FF","#9966FF"]},{"backgroundColor": ["#36A2EB","#36A2EB","#36A2EB","#36A2EB","#36A2EB"]},{"backgroundColor": ["#4BC0C0","#4BC0C0","#4BC0C0","#4BC0C0","#4BC0C0"]}
+    ]
+},
+"options": {"responsive":true,"aspectRatio":1}
+}
+-->
+</canvas>
+The overall performances of the trained landslide models
+</div>
+<span style="display:block; text-align: left; font-size: smaller; float: left; width: 40%; ">
+<ul>
+<li>
+<p>The Overall results show:</p>
+<ul>
+<li>GBM $\rightarrow$ RF $\rightarrow$ NNET $\rightarrow$ SVM $\rightarrow$ LR</li>
+</ul>
+</li>
+<li>
+<p>A positive indicator of the classification capability:</p>
+<ul>
+<li>
+<p>All models show an increase in the landslide density ratio when moving from low to high susceptible classes.</p>
+</li>
+<li>
+<p>All models they do not show any landslide events in the “Very Low” susceptibility class or they only show a very small percentage (&lt;1%).</p>
+</li>
+</ul>
+</li>
+</ul>
+</span>
+<aside class="notes">
+<span style="display:block; text-align: justify; font-size: smaller;">
+The results are satisfying because they fulfill two spatial conditions:
+<blockquote>
+<ul>
+<li>the landslide pixels should be located at the very high and high susceptible classes.</li>
+<li>the extent of the areas covered by the very high and high susceptible classes should be as small as possible.</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>In general, the “Very Low” and “Low” susceptibility classes are grouped pixels with the low probabilities toward landslides, which mean that those pixels have higher confidence probability toward stability. Therefore, having a lower percentage (or even better, an absence) of the lower susceptibility classes indicates a higher confidence in the misclassification error (equal to 1-Acc) achieved by those models.</p>
+</li>
+<li>
+<p>Further, they indicate that the misclassification error achieved was near the classification threshold (for binary equal-proportions, the classifications threshold is 0.5) and not at the extremes.</p>
+</li>
+</ul>
+</span>
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-gbm-landslide-susceptibility-map" class="anchor" href="#gbm-landslide-susceptibility-map" aria-hidden="true"></a>GBM landslide susceptibility map</h2>
+<img width="50%" src="./img/gbm.jpg">
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-rf-landslide-susceptibility-map" class="anchor" href="#rf-landslide-susceptibility-map" aria-hidden="true"></a>RF landslide susceptibility map</h2>
+<img width="50%" src="./img/rf.jpg">
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-nnet-landslide-susceptibility-map" class="anchor" href="#nnet-landslide-susceptibility-map" aria-hidden="true"></a>NNET landslide susceptibility map</h2>
+<img width="50%" src="./img/nnet.jpg">
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-svm-landslide-susceptibility-map" class="anchor" href="#svm-landslide-susceptibility-map" aria-hidden="true"></a>SVM landslide susceptibility map</h2>
+<img width="50%" src="./img/svm.jpg">
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-lr-landslide-susceptibility-map" class="anchor" href="#lr-landslide-susceptibility-map" aria-hidden="true"></a>LR landslide susceptibility map</h2>
+<img width="50%" src="./img/lr.jpg">
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section data-background="orange">
+            <!-- .slide: data-background="orange" -->
+<h1 style="text-align:right;color:black;"><a id="user-content-thank-you" class="anchor" href="#thank-you" aria-hidden="true"></a>Thank you</h1>
+
+            </section>
+        
+            <section data-background="./gif/thats-better.gif">
+                <!-- .slide: data-background="./gif/thats-better.gif" -->
+<h2 style="text-align:right;"><a id="user-content-potential-questions-and-details" class="anchor" href="#potential-questions-and-details" aria-hidden="true"></a>Potential questions and details </h2>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section data-background="orange">
+            <!-- .slide: data-background="orange" -->
+<h1 style="text-align:right;color:black;"><a id="user-content-general-background" class="anchor" href="#general-background" aria-hidden="true"></a>General</br>Background</h1>
+
+            </section>
+        
+            <section >
+                <h2><a id="user-content-general-background-1" class="anchor" href="#general-background-1" aria-hidden="true"></a>General Background</h2>
+<span style="display: block; font-size: smaller;">
+<ul>
+<li>
+<p>The diversity in natural hazards across the country, mandate a strict and stringent protection strategy against these hazards.</p>
+</li>
+<li>
+<p>Mila basin is particularly a unique case in Algeria. This basin is considered (and still) the most vulnerable basin in terms of landslides and floods.</p>
+</li>
+<li>
+<p>In Mila basin, different locations were surprisingly found at critical state.</p>
+</li>
+<li>
+<p>The economic losses instantiated by the spatial evolution of landslides generate huge burdens on local authorities, and thus slowing the local development of the basin.</p>
+</li>
+<li>
+<p>In fact, most local agencies in Mila basin have less experience related to landslides, the preparedness and mitigation activities are not running well in many regions, despite the abundant landslides.</p>
+</li>
+<li>
+<p>The lack of required data, landslide hazard experts, limited budget, lack of reliable susceptibility analyses and the lack of awareness of the local government agencies, are some of the reasons why the mitigation and preparedness activities are far from adequate. On the other hand, these activities are obsolete in order to reduce the effects of the landslides.</p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h2><a id="user-content-general-background-2" class="anchor" href="#general-background-2" aria-hidden="true"></a>General Background</h2>
+<ul>
+<li>
+<p>In reality, there’s exist different nation-wide engineering and hazard mapping projects initiated during the 80’s and One of the main purposes of landslide hazard mapping projects, is to generate landslide susceptibility maps.</p>
+</li>
+<li>
+<p>These maps, depict the spatial probability of occurrences of landslides based on an empirical assumption and in order to generate a landslide susceptibility map there exist two possibilities:</p>
+<ul>
+<li>
+<p>Consider the already published methods and models.</p>
+</li>
+<li>
+<p>Build and modify a model from scratch to get better-expected results due to the fact that the model will be tailored for the study area.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>In spite of that, the chosen mapping method depends on data availability, financial budget, time available for monitoring and observing landslides, detailed level of the acquired data, scale analysis and the proposed models and methodology for assessing and mapping landslide susceptibility.</p>
+</li>
+</ul>
+</span>
+<aside class="notes">
+<span style="display: block; font-size: smaller;">
+For decades, models and methodology that rely on deterministic and expert-knowledge heuristic in geology, geomorphology and soil mechanics were the primary focus for understanding landslide phenomenology and its generative process. However, as the hazard get more complex over the years due to human activities influencing landslides in very different and complex ways, large gamut of models that rely computer science and statistic are gaining attention in demystifying and understanding the hazard, especially, when each case study have its unique set of properties that differ from one to another, making the generalization process harder and difficult to achieve. This is practically noticeable, as many local government agencies and researchers tried to implement classic deterministic and expert-knowledge heuristic methods and models for landslide susceptibility assessment in a small and specific area of interest. However, despite the fact that these models were only implemented for very specific case-studies, these models are known to suffer major drawbacks that can be:
+The relatively high cost.
+Limited scope and spatial extent.
+Relying on subjectivity in defining conditioning factor, weights and scoring values. These given values were based on either user export-opinion or taken values from another location. This kind of subjectivity in any given model is substantial and heavily depends on the expert’s familiarity with the area.
+Requiring a significant amount of cooperation and advisement of other experts in the field. Thus, introducing, an infinite amount of subjectivity that can be inconvenient for a preliminary regional assessment and planning .
+As result, the generated landslide susceptibility maps by these methods suffer many weaknesses and uncertainties. However, instead of deterministic and expert-knowledge heuristic methods, statistical-based methods and models for mapping and assessing landslide susceptibility, are very useful and convenient for large-medium scale analysis as it rely on fact that “previous, current and future landslide failures do not happen randomly or by chance, but instead, failures follow patterns and share common geotechnical behaviors under similar conditions of the past and the present” (Guzzetti et al., 1999) and only require, collecting and preparing an accurate database (i.e. a geospatial database of landslide inventory  and conditioning factors) with maximum details available. Then, models based of these methods are trained and validated using that database and afterward the resulting models are used to generate landslide occurrence probabilities (Tien Bui et al., 2012b).
+</span>
+</aside>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section data-background="orange">
+            <!-- .slide: data-background="orange" -->
+<h1 style="text-align:right;color:black;"><a id="user-content-objectives" class="anchor" href="#objectives" aria-hidden="true"></a>Objectives </h1>
+<aside class="notes">
+<!-- <span style="display: block; font-size: smaller;"> -->
+The objectives could be structured as follows:
+</aside>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-objectives-1" class="anchor" href="#objectives-1" aria-hidden="true"></a>Objectives #1</h2>
+<span style="display: block; text-align: justify;">
+Address the shortage in literature for Mila basin in term of landslide susceptibility mapping through investigating, implementing, assessing and comparing prediction capability of advanced statistical-based models such as Machine Learning methods and algorithms
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-objectives-2" class="anchor" href="#objectives-2" aria-hidden="true"></a>Objectives #2</h2>
+<span style="display: block; text-align: justify;">
+The production of a useful landslide susceptibility mapping and assessment frameworks with a reproducible and unbiased optimization process and exploit the possibility of automating the process of landslide susceptibility mapping or landslide mapping by taking advantage from available resources at the local agencies and open source community.
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-objectives-3" class="anchor" href="#objectives-3" aria-hidden="true"></a>Objectives #3</h2>
+<span style="display: block; text-align: justify;">
+Standardizing the procedure regarding landslide assessment in the study area (i.e. acquisition, scaling, pre-processing, optimization, and evaluation procedures) by preparing custom and reproducible algorithms for specifically the purpose of landslide assessment in the study area using GIS.
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-objectives-4" class="anchor" href="#objectives-4" aria-hidden="true"></a>Objectives #4</h2>
+<span style="display: block; text-align: justify;">
+Implementing a variety of known models and techniques that rely on statistical modeling approaches, but also experimenting with the state-of-the-art techniques, advanced methods and unprecedented solutions for landslide assessment using GIS.
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-objectives-5" class="anchor" href="#objectives-5" aria-hidden="true"></a>Objectives #5</h2>
+<span style="display: block; text-align: justify;">
+Evaluating models performance and the results obtained using the most appropriate procedures and methods, in favor of gaining a qualitative and quantitative descriptors evaluations of the model's performance using GIS in combination with statistical tools.
+</span>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-objectives-6" class="anchor" href="#objectives-6" aria-hidden="true"></a>Objectives #6</h2>
+<span style="display: block; text-align: justify;">
+Address the issues of availability, visualization, and publishing of the detailed results in the form of reproducible, reliable, high resolution, generic landslide susceptibility map per each model using GIS, and web-GIS and estimating their applicability for better environmental management and for reducing the victims and damages caused by future landslide occurrences.
+</span>
+<!-- </span> -->
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section data-background="orange">
+            <!-- .slide: data-background="orange" -->
+<h1 style="text-align:right;color:black;"><a id="user-content-thesis-outline" class="anchor" href="#thesis-outline" aria-hidden="true"></a>Thesis Outline</h1>
+
+            </section>
+        
+            <section >
+                <h2 style="text-align:right;"><a id="user-content-outlines" class="anchor" href="#outlines" aria-hidden="true"></a>Outlines</h2>
+<!-- <span style="display: block; text-align: justify; font-size: large;"> -->
+<small>
+<ul>
+<li>
+<p><strong>Chapter 1</strong> presents a general introduction, followed by the main problematic which is the subject of the thesis.</p>
+</li>
+<li>
+<p><strong>Chapter 2</strong> reports theoretical background information and the problems and issues encountered in landslide susceptibility processes.</p>
+</li>
+<li>
+<p><strong>Chapter 3</strong> presents an overview of the methodologies, concepts and theories used to assess the landslide susceptibility.</p>
+</li>
+<li>
+<p><strong>Chapter 4</strong> intended to provide fundamental background information’s about the case study (i.e. Mila basin).</p>
+</li>
+<li>
+<p><strong>Chapter 5</strong> reports the results obtained at each step of the implemented research workflow (See ‎Chapter 3) and Discuss it.</p>
+</li>
+<li>
+<p><strong>Chapter 6</strong> concentrates on outlining the main achievements the research achieved compared to the primary underlined research objectives.</p>
+</li>
+<li>
+<p><strong>Chapter 7</strong> presents general conclusions drawn from this research.</p>
+</li>
+<li>
+<p><strong>The Bibliography</strong> includes an extensive list of references.</p>
+</li>
+<li>
+<p><strong>Appendix A</strong> reports the repositories used to host the source code used to perform the analysis of this research.</p>
+</li>
+<li>
+<p><strong>Appendix B</strong> includes a descriptive statistical table for the landslide conditioning factors used in research.</p>
+</li>
+</ul>
+</small>
+<!-- </span> -->
+
+            </section>
+        
+
+    </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  <script src="libs/reveal.js/3.8.0/lib/js/head.min.js"></script>
+  <script src="libs/reveal.js/3.8.0/js/reveal.js"></script>
+
+  <script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+
+        controls: true,
+        controlsTutorial: true,
+        controlsLayout: 'bottom-right',
+        controlsBackArrows: 'faded',
+        progress: true,
+        slideNumber: false,
+        history: true,
+        keyboard: true,
+        overview: true,
+        center: true,
+        touch: true,
+        loop: false,
+        rtl: false,
+        shuffle: false,
+        fragments: true,
+        fragmentInURL: false,
+        embedded: false,
+        help: true,
+        showNotes: false,
+        autoPlayMedia: false,
+        autoSlide: 0,
+        autoSlideStoppable: true,
+        autoSlideMethod: Reveal.navigateNext,
+        defaultTiming: 120,
+        mouseWheel: false,
+        hideAddressBar: true,
+        previewLinks: false,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'default',
+        viewDistance: 5,
+        parallaxBackgroundImage: '',
+        parallaxBackgroundSize: '',
+        parallaxBackgroundHorizontal: 0,
+        parallaxBackgroundVertical: 0,
+        display: 'block',
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            // { src: 'libs/reveal.js/3.8.0/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+            // { src: 'libs/reveal.js/3.8.0/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+            // { src: 'libs/reveal.js/3.8.0/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+            // { src: 'libs/reveal.js/3.8.0/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+            { src: 'libs/reveal.js/3.8.0/plugin/notes/notes.js', async: true },
+            { src: 'libs/reveal.js/3.8.0/plugin/chart/Chart.min.js' },
+            { src: 'libs/reveal.js/3.8.0/plugin/chart/csv2chart.js' },
+            { src: 'libs/reveal.js/3.8.0/plugin/embed-tweet/embed-tweet.js' },
+            { src: 'libs/reveal.js/3.8.0/plugin/math/math.js', async: true },
+            { src: 'libs/highlight.js/9.12.0/highlight.js', async: true },
+            { src: 'libs/reveal.js/3.8.0/plugin/anything/anything.js' },
+            { src: 'libs/reveal.js/3.8.0/plugin/mermaid/mermaid.min.js', async: true, callback: function() {mermaid.initialize({startOnLoad:false})} },	
+
+           
+        { src: 'libs/reveal.js/3.8.0/plugin/search/search.js', async: true },
+           
+
+           
+        { src: 'libs/reveal.js/3.8.0/plugin/zoom-js/zoom.js', async: true },
+            
+
+            
+        { src: 'libs/reveal.js/3.8.0/plugin/chalkboard/chalkboard.js' },
+            
+
+            
+        { src: 'libs/reveal.js/3.8.0/plugin/menu/menu.js' },
+            
+
+            
+        { src: 'libs/reveal.js/3.8.0/plugin/title-footer/title-footer.js', async: true, callback: function () { title_footer.initialize(); } },
+            
+
+        {
+            src: 'libs/highlight.js/9.12.0/reveal-code-focus-1.0.0-mod.js',
+            async: true,
+            callback: function () {
+                RevealCodeFocus();
+            }
+        },
+            // { src: 'libs/reveal.js/3.8.0/plugin/reveal-code-focus/highlight.pack.js' },
+            // { src: 'libs/reveal.js/3.8.0/plugin/reveal-code-focus/reveal-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
+           // {src: 'libs/reveal.js/3.8.0/plugin/line-numbers/line-numbers.js'}
+        ]
+        ,
+    keyboard: {
+        67: function () { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+        66: function () { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+        46: function () { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+        8: function () { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+        68: function () { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+    },
+    math: {
+       // mathjax: 'libs/reveal.js/3.8.0/plugin/math/MathJax.js',
+             mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+            config: 'TeX-AMS_HTML-full'
+    },
+    chart: {
+        defaults: {
+            global: {
+                title: { fontColor: "#FFF" },
+                legend: {
+                    position: "bottom",
+                        labels: { fontColor: "#FFF" },
+                },
+                tooltips: {
+                    labels: { fontColor: "#FFF" },
+                },
+            },
+            scale: {
+                scaleLabel: { fontColor: "#FFF" },
+                gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+                ticks: { fontColor: "#FFF" },
+            }
+        },
+        line: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"], "borderDash": [[5, 10], [0, 0]] },
+        bar: { backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+        pie: { backgroundColor: [["rgba(0,0,0,.8)", "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"]] },
+        radar: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+    },
+    anything: [ 
+	 {
+	  className: "mermaid"
+	 },
+	 // ...
+	],
+    menu: {
+        // Specifies which side of the presentation the menu will 
+        // be shown. Use 'left' or 'right'.
+        side: 'left',
+
+            // Specifies the width of the menu.
+            // Can be one of the following:
+            // 'normal', 'wide', 'third', 'half', 'full', or
+            // any valid css length value
+            width: 'normal',
+
+                // Add slide numbers to the titles in the slide list.
+                // Use 'true' or format string (same as reveal.js slide numbers)
+                numbers: false,
+
+                    // Specifies which slide elements will be used for generating
+                    // the slide titles in the menu. The default selects the first
+                    // heading element found in the slide, but you can specify any
+                    // valid css selector and the text from the first matching
+                    // element will be used.
+                    // Note: that a section data-menu-title attribute or an element
+                    // with a menu-title class will take precedence over this option
+                    titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+                        // If slides do not have a matching title, attempt to use the
+                        // start of the text content as the title instead
+                        useTextContentForMissingTitles: false,
+
+                            // Hide slides from the menu that do not have a title.
+                            // Set to 'true' to only list slides with titles.
+                            hideMissingTitles: false,
+
+                                // Adds markers to the slide titles to indicate the 
+                                // progress through the presentation. Set to 'false'
+                                // to hide the markers.
+                                markers: true,
+
+                                    // Specify custom panels to be included in the menu, by
+                                    // providing an array of objects with 'title', 'icon'
+                                    // properties, and either a 'src' or 'content' property.
+                                    // custom: false,
+                                    custom: [],
+                                        // Specifies the themes that will be available in the themes
+                                        // menu panel. Set to 'true' to show the themes menu panel
+                                        // with the default themes list. Alternatively, provide an
+                                        // array to specify the themes to make available in the
+                                        // themes menu panel, for example...
+                                        // [
+                                        //     { name: 'Black', theme: 'css/theme/black.css' },
+                                        //     { name: 'White', theme: 'css/theme/white.css' },
+                                        //     { name: 'League', theme: 'css/theme/league.css' }
+                                        // ]
+                                        themes: false,
+
+                                            // Specifies the path to the default theme files. If your
+                                            // presentation uses a different path to the standard reveal
+                                            // layout then you need to provide this option, but only
+                                            // when 'themes' is set to 'true'. If you provide your own 
+                                            // list of themes or 'themes' is set to 'false' the 
+                                            // 'themesPath' option is ignored.
+                                            themesPath: 'css/theme/',
+
+                                                // Specifies if the transitions menu panel will be shown.
+                                                // Set to 'true' to show the transitions menu panel with
+                                                // the default transitions list. Alternatively, provide an
+                                                // array to specify the transitions to make available in
+                                                // the transitions panel, for example...
+                                                // ['None', 'Fade', 'Slide']
+                                                transitions: false,
+
+                                                    // Adds a menu button to the slides to open the menu panel.
+                                                    // Set to 'false' to hide the button.
+                                                    openButton: true,
+
+                                                        // If 'true' allows the slide number in the presentation to
+                                                        // open the menu panel. The reveal.js slideNumber option must 
+                                                        // be displayed for this to take effect
+                                                        openSlideNumber: false,
+
+                                                            // If true allows the user to open and navigate the menu using
+                                                            // the keyboard. Standard keyboard interaction with reveal
+                                                            // will be disabled while the menu is open.
+                                                            keyboard: true,
+
+                                                                // Normally the menu will close on user actions such as
+                                                                // selecting a menu item, or clicking the presentation area.
+                                                                // If 'true', the sticky option will leave the menu open
+                                                                // until it is explicitly closed, that is, using the close
+                                                                // button or pressing the ESC or m key (when the keyboard 
+                                                                // interaction option is enabled).
+                                                                sticky: false,
+
+                                                                    // If 'true' standard menu items will be automatically opened
+                                                                    // when navigating using the keyboard. Note: this only takes 
+                                                                    // effect when both the 'keyboard' and 'sticky' options are enabled.
+                                                                    autoOpen: true,
+
+                                                                        // If 'true' the menu will not be created until it is explicitly
+                                                                        // requested by calling RevealMenu.init(). Note this will delay
+                                                                        // the creation of all menu panels, including custom panels, and
+                                                                        // the menu button.
+                                                                        delayInit: false,
+
+                                                                            // If 'true' the menu will be shown when the menu is initialised.
+                                                                            openOnInit: false,
+
+                                                                                // By default the menu will load it's own font-awesome library
+                                                                                // icons. If your presentation needs to load a different
+                                                                                // font-awesome library the 'loadIcons' option can be set to false
+                                                                                // and the menu will not attempt to load the font-awesome library.
+                                                                                loadIcons: false
+    },
+    chalkboard: {
+        toggleChalkboardButton: { left: "60px", bottom: "30px", top: "auto", right: "auto" },
+        toggleNotesButton: { left: "90px", bottom: "30px", top: "auto", right: "auto" },
+
+    }
+    });
+
+
+
+</script>
+</body>
+
+</html>
